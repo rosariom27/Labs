@@ -9,7 +9,7 @@ using Data.Database;
 namespace Negocio
 {
     public class PlanLogic: NegocioLogic
-    {//HOLA RO
+    {
         private PlanAdapter _PlanData;
         public PlanAdapter PlanData
     {

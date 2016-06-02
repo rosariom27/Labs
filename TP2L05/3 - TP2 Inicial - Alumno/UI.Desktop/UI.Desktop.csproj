@@ -56,6 +56,12 @@
     <Compile Include="ComisionDesktop.Designer.cs">
       <DependentUpon>ComisionDesktop.cs</DependentUpon>
     </Compile>
+    <Compile Include="Comisiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comisiones.Designer.cs">
+      <DependentUpon>Comisiones.cs</DependentUpon>
+    </Compile>
     <Compile Include="EspecialidadDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ComisionDesktop.resx">
       <DependentUpon>ComisionDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comisiones.resx">
+      <DependentUpon>Comisiones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
