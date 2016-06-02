@@ -10,6 +10,7 @@ namespace Negocio
 {
     public class MateriaLogic: NegocioLogic 
     {
+        
         private MateriaAdapter _MateriaData;
         public MateriaAdapter MateriaData
     {
@@ -22,12 +23,12 @@ namespace Negocio
             MateriaData = new MateriaAdapter();
         }
 
-    public Materia GetOne(int ID)
+        public Materia GetOne(int ID)
     {
         return MateriaData.GetOne(ID);
     }
 
-    public List<Materia> GetAll()
+        public List<Materia> GetAll()
     {
         try
         {
@@ -40,19 +41,17 @@ namespace Negocio
             throw ExcepcionManejada;
         }
     }
-
     
-    public void Save(Materia materia)
+        public void Save(Materia materia)
     {
         MateriaData.Save(materia);
     }
 
-    public void Delete(int ID)
+        public void Delete(int ID)
     {
         MateriaData.Delete(ID);
     } 
 
-
-
     }
+
 }

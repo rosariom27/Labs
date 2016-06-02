@@ -12,31 +12,31 @@ using Entidades;
 
 namespace UI.Desktop
 {
-    public partial class Comisiones : Form
+    public partial class Materias : Form
     {
-        public Comisiones()
+        public Materias()
         {
             InitializeComponent();
         }
 
-        private Comisión _comisionActual;
-        public Comisión ComisionActual
+        private Materias _materiaActual;
+        public Materias MateriaActual
         {
-            get { return _comisionActual; }
-            set { _comisionActual = value; }
+            get { return _materiaActual; }
+            set { _materiaActual = value; }
         }
 
         public void Listar()
         {
             try
             {
-                ComisionLogic cl = new ComisionLogic();
-                this.dgvComisiones.DataSource = cl.GetAll();
+                MateriaLogic mat = new MateriaLogic();
+                this.dgvMaterias.DataSource = mat.GetAll();
             }
 
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada = new Exception("Error al recuperar listas de comisiones", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar listas de materias", Ex);
                 MessageBox.Show("Error", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw ExcepcionManejada;
             }
@@ -47,42 +47,42 @@ namespace UI.Desktop
             MessageBox.Show(mensaje, titulo, botones, icono);
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            this.Listar(); 
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close(); 
-        }
-
-        private void Comisiones_Load(object sender, EventArgs e)
+        private void Materias_Load(object sender, EventArgs e)
         {
             this.Listar();
         }
 
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            this.Listar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-            ComisionDesktop formComision;
-            formComision = new ComisionDesktop(ApplicationForm.ModoForm.Alta);
-            formComision.ShowDialog();
+            MateriaDesktop formMateria;
+            formMateria = new MateriaDesktop(ApplicationForm.ModoForm.Alta);
+            formMateria.ShowDialog();
             this.Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            int id = ((Entidades.Plan)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
-            ComisionDesktop formComision = new ComisionDesktop(id, ApplicationForm.ModoForm.Modificacion);
-            formComision.ShowDialog();
+            int id = ((Entidades.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
+            MateriaDesktop formMateria = new MateriaDesktop(id, ApplicationForm.ModoForm.Modificacion);
+            formMateria.ShowDialog();
             this.Listar();
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            int id = ((Entidades.Comisión)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
-            ComisionDesktop formComision = new ComisionDesktop(id, ApplicationForm.ModoForm.Baja);
-            formComision.ShowDialog();
+            int id = ((Entidades.Materia)this.dgvMaterias.SelectedRows[0].DataBoundItem).ID;
+            MateriaDesktop formMateria = new MateriaDesktop(id, ApplicationForm.ModoForm.Baja);
+            formMateria.ShowDialog();
             this.Listar();
 
             /*
@@ -93,8 +93,6 @@ namespace UI.Desktop
             usu.Delete(id);
             this.Listar();*/
         }
-
-
     }
 
 }

@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="AlumnoInscripcionLogic.cs" />
     <Compile Include="ComisionLogic.cs" />
+    <Compile Include="CursoLogic.cs" />
+    <Compile Include="DocenteCursoLogic.cs" />
     <Compile Include="EspecialidadLogic.cs" />
     <Compile Include="MateriaLogic.cs" />
     <Compile Include="NegocioLogic.cs" />

@@ -22,12 +22,12 @@ namespace Negocio
             AlumnoInscripcionData = new AlumnoInscripcionAdapter();
         }
 
-    public AlumnoInsrcipcion GetOne(int ID)
+    public AlumnoInscripcion GetOne(int ID)
     {
         return AlumnoInscripcionData.GetOne(ID);
     }
 
-    public List<AlumnoInsrcipcion> GetAll()
+    public List<AlumnoInscripcion> GetAll()
     {
         try
         {
@@ -42,7 +42,7 @@ namespace Negocio
     }
 
     
-    public void Save(AlumnoInsrcipcion alumnoInscripcion)
+    public void Save(AlumnoInscripcion alumnoInscripcion)
     {
         AlumnoInscripcionData.Save(alumnoInscripcion);
     }
@@ -52,6 +52,6 @@ namespace Negocio
         AlumnoInscripcionData.Delete(ID);
     } 
 
-
     }
+
 }

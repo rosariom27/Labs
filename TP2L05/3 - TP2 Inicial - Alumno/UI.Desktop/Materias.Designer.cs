@@ -1,6 +1,6 @@
 ﻿namespace UI.Desktop
 {
-    partial class Comisiones
+    partial class Materias
     {
         /// <summary>
         /// Required designer variable.
@@ -28,26 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Comisiones));
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materias));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
-            this.tsComisiones = new System.Windows.Forms.ToolStrip();
+            this.tsMaterias = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvComisiones = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tlMaterias = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvMaterias = new System.Windows.Forms.DataGridView();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AñoEspecialidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HSSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HSTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.tsComisiones.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).BeginInit();
+            this.tsMaterias.SuspendLayout();
+            this.tlMaterias.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -55,30 +58,30 @@
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Controls.Add(this.tableLayoutPanel1);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(728, 284);
+            this.toolStripContainer1.ContentPanel.Controls.Add(this.tlMaterias);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(633, 261);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(728, 309);
+            this.toolStripContainer1.Size = new System.Drawing.Size(633, 286);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
-            // toolStripContainer1.tcComisiones
+            // toolStripContainer1.tcMaterias
             // 
-            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.tsComisiones);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.tsMaterias);
             // 
-            // tsComisiones
+            // tsMaterias
             // 
-            this.tsComisiones.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsComisiones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsMaterias.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsMaterias.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.tsbEditar,
             this.tsbEliminar});
-            this.tsComisiones.Location = new System.Drawing.Point(3, 0);
-            this.tsComisiones.Name = "tsComisiones";
-            this.tsComisiones.Size = new System.Drawing.Size(112, 25);
-            this.tsComisiones.TabIndex = 0;
+            this.tsMaterias.Location = new System.Drawing.Point(3, 0);
+            this.tsMaterias.Name = "tsMaterias";
+            this.tsMaterias.Size = new System.Drawing.Size(112, 25);
+            this.tsMaterias.TabIndex = 0;
             // 
             // tsbNuevo
             // 
@@ -110,44 +113,50 @@
             this.tsbEliminar.Text = "toolStripButton3";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
-            // tableLayoutPanel1
+            // contextMenuStrip1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.95055F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.04945F));
-            this.tableLayoutPanel1.Controls.Add(this.dgvComisiones, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnActualizar, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnSalir, 1, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.92453F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.07547F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(728, 284);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dgvComisiones
+            // tlMaterias
             // 
-            this.dgvComisiones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComisiones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tlMaterias.ColumnCount = 2;
+            this.tlMaterias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.57188F));
+            this.tlMaterias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.42812F));
+            this.tlMaterias.Controls.Add(this.dgvMaterias, 0, 0);
+            this.tlMaterias.Controls.Add(this.btnActualizar, 0, 1);
+            this.tlMaterias.Controls.Add(this.btnSalir, 1, 1);
+            this.tlMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlMaterias.Location = new System.Drawing.Point(0, 0);
+            this.tlMaterias.Name = "tlMaterias";
+            this.tlMaterias.RowCount = 2;
+            this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.97318F));
+            this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.02682F));
+            this.tlMaterias.Size = new System.Drawing.Size(633, 261);
+            this.tlMaterias.TabIndex = 0;
+            // 
+            // dgvMaterias
+            // 
+            this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.IDPlan,
-            this.Descripción,
-            this.AñoEspecialidad});
-            this.tableLayoutPanel1.SetColumnSpan(this.dgvComisiones, 2);
-            this.dgvComisiones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvComisiones.Location = new System.Drawing.Point(3, 3);
-            this.dgvComisiones.Name = "dgvComisiones";
-            this.dgvComisiones.Size = new System.Drawing.Size(722, 243);
-            this.dgvComisiones.TabIndex = 0;
+            this.Descripcion,
+            this.HSSemanales,
+            this.HSTotales});
+            this.tlMaterias.SetColumnSpan(this.dgvMaterias, 2);
+            this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMaterias.Location = new System.Drawing.Point(3, 3);
+            this.dgvMaterias.Name = "dgvMaterias";
+            this.dgvMaterias.Size = new System.Drawing.Size(627, 221);
+            this.dgvMaterias.TabIndex = 0;
             // 
             // btnActualizar
             // 
             this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnActualizar.Location = new System.Drawing.Point(544, 252);
+            this.btnActualizar.Location = new System.Drawing.Point(469, 230);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(85, 29);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 28);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -156,9 +165,9 @@
             // btnSalir
             // 
             this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSalir.Location = new System.Drawing.Point(639, 252);
+            this.btnSalir.Location = new System.Drawing.Point(555, 230);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(86, 29);
+            this.btnSalir.Size = new System.Drawing.Size(75, 28);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -172,38 +181,43 @@
             // 
             // IDPlan
             // 
-            this.IDPlan.HeaderText = "IDPlan";
+            this.IDPlan.HeaderText = "ID Plan";
             this.IDPlan.Name = "IDPlan";
             this.IDPlan.ReadOnly = true;
             // 
-            // Descripción
+            // Descripcion
             // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.Name = "Descripción";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
             // 
-            // AñoEspecialidad
+            // HSSemanales
             // 
-            this.AñoEspecialidad.HeaderText = "Año Especialidad";
-            this.AñoEspecialidad.Name = "AñoEspecialidad";
+            this.HSSemanales.HeaderText = "Horas Semanales";
+            this.HSSemanales.Name = "HSSemanales";
             // 
-            // Comisiones
+            // HSTotales
+            // 
+            this.HSTotales.HeaderText = "Horas Totales";
+            this.HSTotales.Name = "HSTotales";
+            // 
+            // Materias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 309);
+            this.ClientSize = new System.Drawing.Size(633, 286);
             this.Controls.Add(this.toolStripContainer1);
-            this.Name = "Comisiones";
-            this.Text = "Comisiones";
-            this.Load += new System.EventHandler(this.Comisiones_Load);
+            this.Name = "Materias";
+            this.Text = "Materias";
+            this.Load += new System.EventHandler(this.Materias_Load);
             this.toolStripContainer1.ContentPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.tsComisiones.ResumeLayout(false);
-            this.tsComisiones.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComisiones)).EndInit();
+            this.tsMaterias.ResumeLayout(false);
+            this.tsMaterias.PerformLayout();
+            this.tlMaterias.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -211,19 +225,19 @@
         #endregion
 
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
-        private System.Windows.Forms.ToolStrip tsComisiones;
+        private System.Windows.Forms.ToolStrip tsMaterias;
         private System.Windows.Forms.ToolStripButton tsbNuevo;
         private System.Windows.Forms.ToolStripButton tsbEditar;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dgvComisiones;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TableLayoutPanel tlMaterias;
+        private System.Windows.Forms.DataGridView dgvMaterias;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AñoEspecialidad;
-
-
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HSSemanales;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HSTotales;
     }
 }

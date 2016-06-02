@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class AlumnoInsrcipcion : Entidad
+    public class AlumnoInscripcion : Entidad
     {
         private int _IDAlumno;
         private Curso _Curso;
@@ -14,12 +14,12 @@ namespace Entidades
         private string _Condicion;
         private float _Nota;
         
-        public AlumnoInsrcipcion()
+        public AlumnoInscripcion()
         {
             this.Persona = new Personas();
             this._Curso = new Curso();
         }
-               
+                 
         public Curso Curso
         {
             get { return _Curso; }
@@ -83,5 +83,7 @@ namespace Entidades
         {
             get { return _Curso.AnioCalendario; }
         }
+
     }
+
 }

@@ -17,30 +17,30 @@ namespace UI.Desktop
         {
             InitializeComponent();
         }
-    public ComisionDesktop(ModoForm modo): this()
+        
+        public ComisionDesktop(ModoForm modo): this()
         {
             Modo = modo;
             
         }
 
-    public ComisionDesktop(int ID, ModoForm modo): this()
+        public ComisionDesktop(int ID, ModoForm modo): this()
         {
             Modo = modo;
             ComisionLogic com = new ComisionLogic();
             ComisionActual = com.GetOne(ID);
-            this.MapearDeDatos();
-
-            
+            this.MapearDeDatos();   
         }
 
-     private Comisión _comisionActual;
-     public Comisión ComisionActual
+     
+        private Comisión _comisionActual;
+        public Comisión ComisionActual
         {
             get { return _comisionActual; }
             set { _comisionActual = value; }
         }
 
-     public virtual void MapearDeDatos() 
+        public virtual void MapearDeDatos() 
         {
             this.txtID.Text = this.ComisionActual.ID.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion;   
@@ -64,7 +64,7 @@ namespace UI.Desktop
             
         }
 
-     public virtual void MapearADatos()
+        public virtual void MapearADatos()
      {
 
          if (Modo == ModoForm.Alta)
@@ -91,13 +91,14 @@ namespace UI.Desktop
          }
      }
 
-     public virtual void GuardarCambios() 
+        public virtual void GuardarCambios() 
         {
             this.MapearADatos();
             ComisionLogic cl = new ComisionLogic();
             cl.Save(ComisionActual);
         }
-     public virtual bool Validar()
+
+        public virtual bool Validar()
      {               
                     if ( (string.IsNullOrEmpty(this.txtDescripcion.Text)) )
                 {
@@ -106,17 +107,18 @@ namespace UI.Desktop
                 }
                     return false;
         }
-     public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
+
+        public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
             MessageBox.Show(mensaje, titulo, botones, icono);
         }
-     public void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
+
+        public void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
             this.Notificar(this.Text, mensaje, botones, icono);
         }
   
-
-     private void btnAceptar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
      {
          if (this.Validar() == true)
          {
@@ -126,13 +128,11 @@ namespace UI.Desktop
          //TERMINAR CON EL IF
      }
 
-     private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
      {
          this.Close();
      }
-    
-
-
-
+   
     }
+
 }

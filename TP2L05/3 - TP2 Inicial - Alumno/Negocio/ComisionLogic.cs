@@ -23,12 +23,12 @@ namespace Negocio
             ComisionData = new ComisionAdapter();
         }
 
-    public Comisión GetOne(int ID)
+        public Comisión GetOne(int ID)
     {
         return ComisionData.GetOne(ID);
     }
 
-    public List<Comisión> GetAll()
+        public List<Comisión> GetAll()
     {
         try
         {
@@ -42,13 +42,12 @@ namespace Negocio
         }
     }
 
-    
-    public void Save(Comisión comision)
+        public void Save(Comisión comision)
     {
         ComisionData.Save(comision);
     }
 
-    public void Delete(int ID)
+        public void Delete(int ID)
     {
         ComisionData.Delete(ID);
     } 

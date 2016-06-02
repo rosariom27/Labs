@@ -87,7 +87,6 @@ namespace Data.Database
 
         }
 
-
         public void Delete(int id)
         {
             try

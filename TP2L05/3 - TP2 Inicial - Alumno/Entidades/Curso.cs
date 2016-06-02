@@ -11,7 +11,6 @@ namespace Entidades
         private int _AnioCalendario;
         private int _Cupo;
         private string _Descripcion;
-
         private Comisión _Comision;
         private Materia _Materia;
 
@@ -35,8 +34,8 @@ namespace Entidades
 
         public Curso()
         {
-        this._Comision = new Comisión();
-        this._Materia = new Materia();
+        this.Comision = new Comisión();
+        this.Materia = new Materia();
         }
 
         public int IDComision
@@ -57,6 +56,18 @@ namespace Entidades
         public string DescMateria
         {
             get { return _Materia.Descripcion; }
+        }
+
+        public Comisión Comision
+        {
+            get { return _Comision; }
+            set { _Comision = value; }
+        }
+
+        public Materia Materia
+        {
+            get { return _Materia; }
+            set { _Materia = value; }
         }
 
         

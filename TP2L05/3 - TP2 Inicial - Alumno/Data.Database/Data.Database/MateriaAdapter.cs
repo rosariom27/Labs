@@ -8,10 +8,9 @@ using System.Data.SqlClient;
 namespace Data.Database
 {
     public class MateriaAdapter : Adapter
-    { //REVISAR CONTRA BD
+    {
         public List<Materia> GetAll()
         {
-
             try
             {
 
@@ -26,9 +25,9 @@ namespace Data.Database
                     Materia mat = new Materia();
                     mat.ID = (int)drMaterias["id_materia"];
                     mat.Descripcion = (string)drMaterias["desc_materia"];
-                    mat.HSSemanales = (int)drMaterias["////"];
-                    mat.HSTotales = (int)drMaterias["////"];
-                    mat.IDPlan = (string)drMaterias["////"];
+                    mat.HSSemanales = (int)drMaterias["hs_semanales"];
+                    mat.HSTotales = (int)drMaterias["hs_totales"];
+                    mat.Plan.ID = (int)drMaterias["id_plan"];
                     
 
                     materias.Add(mat);
@@ -64,9 +63,9 @@ namespace Data.Database
                 {
                     mat.ID = (int)drMaterias["id_materia"];
                     mat.Descripcion = (string)drMaterias["desc_materia"];
-                    mat.HSSemanales = (int)drMaterias["////"];
-                    mat.HSTotales = (int)drMaterias["////"];
-                    mat.IDPlan = (string)drMaterias["////"];
+                    mat.HSSemanales = (int)drMaterias["hs_semanales"];
+                    mat.HSTotales = (int)drMaterias["hs_totales"];
+                    mat.Plan.ID = (int)drMaterias["id_plan"];
 
                 }
 
@@ -89,8 +88,7 @@ namespace Data.Database
             return mat;
 
         }
-
-
+        
         public void Delete(int id)
         {
             try
@@ -138,17 +136,17 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("UPDATE materias SET nombre_usuario=@nombre_usuario, clave=@clave," +
-                    "habilitado=@habilitado, nombre=@nombre, apellido=@apellido, email=@email " +
-                    "WHERE id_usuario=@id", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE materias SET desc_materia=@desc_materia, hs_semanales=@hs_semanales," +
+                    "hs_totales=@hs_totales, id_plan=@id_plan " +
+                    "WHERE id_materia=@id", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = materia.ID;
                 cmdSave.Parameters.Add("@desc_maeteria", SqlDbType.VarChar, 50).Value = materia.Descripcion;
-                cmdSave.Parameters.Add("@HSSemanales", SqlDbType.Int, 50).Value = materia.HSSemanales;
-                cmdSave.Parameters.Add("@HSTotales", SqlDbType.Int).Value = materia.HSTotales;
-                cmdSave.Parameters.Add("@IDPlan", SqlDbType.Int, 50).Value = materia.Plan.ID;
+                cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSemanales;
+                cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;
+                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.Plan.ID;
  
                 cmdSave.ExecuteNonQuery();
 
@@ -172,15 +170,15 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("insert into materias (nombre_usuario, clave, habilitado, nombre, apellido, email) " +
-                "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email)" + "select @@identity", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("insert into materias (desc_materia, hs_semanales, hs_totales, id_plan) " +
+                "values(@desc_materia, @hs_semanales, @hs_totales, @id_plan)" + "select @@identity", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 
                 cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
-                cmdSave.Parameters.Add("@HSSemanales", SqlDbType.VarChar, 50).Value = materia.HSSemanales;
-                cmdSave.Parameters.Add("@HSTotales", SqlDbType.Bit).Value = materia.HSTotales;
-                cmdSave.Parameters.Add("@IDPlan", SqlDbType.VarChar, 50).Value = materia.Plan.ID;
+                cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSemanales;
+                cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;
+                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.Plan.ID;
            
                 materia.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
@@ -197,12 +195,6 @@ namespace Data.Database
             }
         }
 
-
-
-
-
-
-
-
     }
+
 }
