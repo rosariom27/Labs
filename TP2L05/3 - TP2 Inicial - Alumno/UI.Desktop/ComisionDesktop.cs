@@ -75,7 +75,7 @@ namespace UI.Desktop
              this.ComisionActual.State = Entidad.States.New;
 
              this.ComisionActual.Descripcion = this.txtDescripcion.Text;
-             this.ComisionActual.AnioEspecialidad = this.txtAnioEspecialidad.Text;
+             this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioEspecialidad.Text);
 
          }
          else
@@ -85,7 +85,7 @@ namespace UI.Desktop
                  this.ComisionActual.State = Entidad.States.Modified;
 
                  this.ComisionActual.Descripcion = this.txtDescripcion.Text;
-                 this.ComisionActual.AnioEspecialidad = this.txtAnioEspecialidad.Text;
+                 this.ComisionActual.AnioEspecialidad = int.Parse(this.txtAnioEspecialidad.Text);
 
              }
          }

@@ -72,10 +72,10 @@ namespace UI.Desktop
 
                 this.CursoActual.State = Entidad.States.New;
 
-                this.CursoActual.Materia.ID = this.txtIDMateria.Text.ToString();
-                this.CursoActual.Comision.ID = this.txtIDComision.Text;
-                this.CursoActual.AnioCalendario = this.txtAnioCalendario.Text.ToString();
-                this.CursoActual.Cupo = this.txtCupo.Text;                               
+                this.CursoActual.Materia.ID = int.Parse(this.txtIDMateria.Text);
+                this.CursoActual.Comision.ID = int.Parse(this.txtIDComision.Text);
+                this.CursoActual.AnioCalendario = int.Parse(this.txtAnioCalendario.Text);
+                this.CursoActual.Cupo = int.Parse(this.txtCupo.Text);
             }
             else
             {
@@ -83,10 +83,10 @@ namespace UI.Desktop
                 {
                     this.CursoActual.State = Entidad.States.Modified;
 
-                    this.CursoActual.Materia.ID = this.txtIDMateria.Text.ToString();
-                    this.CursoActual.Comision.ID = this.txtIDComision.Text;
-                    this.CursoActual.AnioCalendario = this.txtAnioCalendario.Text.ToString();
-                    this.CursoActual.Cupo = this.txtCupo.Text; 
+                    this.CursoActual.Materia.ID = int.Parse(this.txtIDMateria.Text);
+                    this.CursoActual.Comision.ID = int.Parse(this.txtIDComision.Text);
+                    this.CursoActual.AnioCalendario = int.Parse(this.txtAnioCalendario.Text);
+                    this.CursoActual.Cupo = int.Parse(this.txtCupo.Text);
                 }
             }
         }

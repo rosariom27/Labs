@@ -72,9 +72,9 @@ namespace UI.Desktop
 
                 this.DocenteCursoActual.State = Entidad.States.New;
 
-                this.DocenteCursoActual.Persona.ID = this.txtIDCurso.Text;
-                this.DocenteCursoActual.Curso.ID = this.txtIDCurso.Text;
-                this.DocenteCursoActual.Cargo = this.txtCargo.Text;                               
+                this.DocenteCursoActual.Persona.ID = int.Parse(this.txtIDCurso.Text);
+                this.DocenteCursoActual.Curso.ID = int.Parse(this.txtIDCurso.Text);
+                this.DocenteCursoActual.Cargo = int.Parse(this.txtCargo.Text); 
             }
             else
             {
@@ -82,9 +82,9 @@ namespace UI.Desktop
                 {
                     this.DocenteCursoActual.State = Entidad.States.Modified;
 
-                    this.DocenteCursoActual.Persona.ID = this.txtIDCurso.Text;
-                    this.DocenteCursoActual.Curso.ID = this.txtIDCurso.Text;
-                    this.DocenteCursoActual.Cargo = this.txtCargo.Text; 
+                    this.DocenteCursoActual.Persona.ID = int.Parse(this.txtIDCurso.Text);
+                    this.DocenteCursoActual.Curso.ID = int.Parse(this.txtIDCurso.Text);
+                    this.DocenteCursoActual.Cargo = int.Parse(this.txtCargo.Text); 
                 }
             }
         }

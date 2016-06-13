@@ -77,9 +77,9 @@ namespace UI.Desktop
                 this.MateriaActual.State = Entidad.States.New;
 
                 this.MateriaActual.Descripcion = this.txtDescripcion.Text;
-                this.MateriaActual.HSSemanales = this.txtHSSemanales.Text.ToString();
-                this.MateriaActual.HSTotales = this.txtHSTotales.Text;
-                this.MateriaActual.Plan.ID = this.txtIDPlan.Text;
+                this.MateriaActual.HSSemanales = int.Parse(this.txtHSSemanales.Text);
+                this.MateriaActual.HSTotales = int.Parse(this.txtHSTotales.Text);
+                this.MateriaActual.Plan.ID = int.Parse(this.txtIDPlan.Text);
                                                
             }
             else
@@ -89,9 +89,9 @@ namespace UI.Desktop
                     this.MateriaActual.State = Entidad.States.Modified;
 
                     this.MateriaActual.Descripcion = this.txtDescripcion.Text;
-                    this.MateriaActual.HSSemanales = this.txtHSSemanales.Text.ToString();
-                    this.MateriaActual.HSTotales = this.txtHSTotales.Text;
-                    this.MateriaActual.Plan.ID = this.txtIDPlan.Text;
+                    this.MateriaActual.HSSemanales = int.Parse(this.txtHSSemanales.Text);
+                    this.MateriaActual.HSTotales = int.Parse(this.txtHSTotales.Text);
+                    this.MateriaActual.Plan.ID = int.Parse(this.txtIDPlan.Text);
                 }
             }
         }
