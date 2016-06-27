@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Entidades;
+using Data.Database;
 namespace Negocio
 {
     public class TipoPersonaLogic :NegocioLogic
     {
-          private TipoPersonaAdapter _TipoPersonaData;
-          public TipoPersonaAdapter TipoPersonaData  //falta
+          
+        private TipoPersonaAdapter _TipoPersonaData;
+        public TipoPersonaAdapter TipoPersonaData
     {
         get { return _TipoPersonaData; }
         set { _TipoPersonaData = value; }
@@ -20,36 +22,35 @@ namespace Negocio
             TipoPersonaData = new TipoPersonaAdapter();
         }
 
-    public Usuario GetOne(int ID)
+    public TipoPersona GetOne(int ID)
     {
-        return UsuarioData.GetOne(ID);
+        return TipoPersonaData.GetOne(ID);
     }
 
-    public List<Usuario> GetAll()
+    public List<TipoPersona> GetAll()
     {
         try
         {
-            return UsuarioData.GetAll();
+            return TipoPersonaData.GetAll();
         }
 
         catch (Exception Ex)
         {
-            Exception ExcepcionManejada = new Exception("Error al recuperar listas de usuarios", Ex);
+            Exception ExcepcionManejada = new Exception("Error al recuperar listas de tipos de personas", Ex);
             throw ExcepcionManejada;
         }
     }
 
     
-    public void Save(Usuario usuario)
+    public void Save(TipoPersona tipoPersona)
     {
-        UsuarioData.Save(usuario);
+        TipoPersonaData.Save(tipoPersona);
     }
 
     public void Delete(int ID)
     {
-        UsuarioData.Delete(ID);
+        TipoPersonaData.Delete(ID);
     } 
-
 
         
     }
