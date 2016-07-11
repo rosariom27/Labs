@@ -158,14 +158,14 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("insert into usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email) " +
+                SqlCommand cmdSave = new SqlCommand("insert into personas (nombre_usuario, clave, habilitado, nombre, apellido, email) " +
                 "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email)" + "select @@identity", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 
-                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
+                cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = tipopersona.NombreUsuario;
                 
-                usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                tipopersona.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
 
             catch (Exception Ex)
