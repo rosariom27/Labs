@@ -257,7 +257,7 @@
             // 
             // personasBindingSource
             // 
-            this.personasBindingSource.DataSource = typeof(Entidades.Personas);
+            this.personasBindingSource.DataSource = typeof(Entidades.Persona);
             // 
             // UsuarioDesktop
             // 

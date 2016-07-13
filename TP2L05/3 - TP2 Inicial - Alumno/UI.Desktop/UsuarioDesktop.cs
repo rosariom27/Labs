@@ -112,9 +112,7 @@ namespace UI.Desktop
         public virtual bool Validar()
       
         {
-               
-               
-                    if ( (string.IsNullOrEmpty(this.txtNombre.Text)) )
+                if ( (string.IsNullOrEmpty(this.txtNombre.Text)) )
                 {
                     this.Notificar("Advertencia","No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );                    
                     return false;

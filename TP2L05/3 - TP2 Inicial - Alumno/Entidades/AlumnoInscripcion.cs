@@ -10,13 +10,13 @@ namespace Entidades
     {
         private int _IDAlumno;
         private Curso _Curso;
-        private Personas _Alumno;
+        private Persona _Alumno;
         private string _Condicion;
         private float _Nota;
         
         public AlumnoInscripcion()
         {
-            this.Persona = new Personas();
+            this.Persona = new Persona();
             this._Curso = new Curso();
         }
                  
@@ -36,7 +36,7 @@ namespace Entidades
             get { return _Curso.Descripcion; }
         }
   
-        public Personas Persona
+        public Persona Persona
         {
             get { return _Alumno;}
             set { _Alumno = value; }

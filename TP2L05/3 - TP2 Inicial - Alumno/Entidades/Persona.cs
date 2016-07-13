@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Personas: Entidad
+    public class Persona: Entidad
     {
         private string _Apellido;
         private string _Direccion;
@@ -18,7 +18,7 @@ namespace Entidades
         private string _Telefono;
         private int _TipoPersona;
     
-        public Personas()
+        public Persona()
         {
             this.Plan = new Plan();
         }

@@ -53,7 +53,12 @@ namespace Negocio
     public void Delete(int ID)
     {
         UsuarioData.Delete(ID);
-    } 
+    }
+
+    public Usuario GetUsuarioForLogin(string us, string pass)
+    {
+        return UsuarioData.GetUsuarioForLogin(us, pass);
+    }
 
     }
 

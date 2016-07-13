@@ -255,5 +255,41 @@ namespace Data.Database
             }
         }
 
+        public Usuario GetUsuarioForLogin(string us, string pass)
+        {
+            Usuario u = new Usuario();
+
+            try
+            {
+                this.OpenConnection();
+
+                SqlCommand cmdUsuario = new SqlCommand("select * from usuarios WHERE clave=@clave and nombre_usuario=@nombre_usuario ", sqlConn);
+                cmdUsuario.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = pass;
+                cmdUsuario.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = us;
+                SqlDataReader drUsuarios = cmdUsuario.ExecuteReader();
+
+                while (drUsuarios.Read())
+                {
+                    u.ID = (int)drUsuarios["id_usuario"];
+                    u.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    u.Clave = (string)drUsuarios["clave"];
+                    u.Habilitado = (bool)drUsuarios["habilitado"];
+                    //u.IDPersona = (int)drUsuarios["id_persona"];
+                }
+                
+                drUsuarios.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.Message);
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
+            return u;
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        private AlumnoInscripcion _alumnoInscripcionActual;
+       private AlumnoInscripcion _alumnoInscripcionActual;
         public AlumnoInscripcion AlumnoInscripcionActual
         {
             get { return _alumnoInscripcionActual; }

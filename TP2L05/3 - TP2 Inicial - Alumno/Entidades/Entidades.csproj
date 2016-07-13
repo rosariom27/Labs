@@ -46,7 +46,7 @@
     <Compile Include="Entidad.cs" />
     <Compile Include="Especialidad.cs" />
     <Compile Include="Materia.cs" />
-    <Compile Include="Personas.cs" />
+    <Compile Include="Persona.cs" />
     <Compile Include="Plan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TipoPersona.cs" />

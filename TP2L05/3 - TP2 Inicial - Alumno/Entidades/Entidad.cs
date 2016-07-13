@@ -35,9 +35,5 @@ namespace Entidades
             Unmodified,
         }
     }
-    class AlumnoInscripcion: Entidad
-    {
-
-    }
 
 }

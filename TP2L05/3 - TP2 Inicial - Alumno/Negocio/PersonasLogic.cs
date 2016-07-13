@@ -22,12 +22,12 @@ namespace Negocio
             PersonaData = new PersonaAdapter();
         }
 
-    public Personas GetOne(int ID)
+    public Persona GetOne(int ID)
     {
         return PersonaData.GetOne(ID);
     }
 
-    public List<Personas> GetAll()
+    public List<Persona> GetAll()
     {
         try
         {
@@ -42,7 +42,7 @@ namespace Negocio
     }
 
     
-    public void Save(Personas persona)
+    public void Save(Persona persona)
     {
         PersonaData.Save(persona);
     }

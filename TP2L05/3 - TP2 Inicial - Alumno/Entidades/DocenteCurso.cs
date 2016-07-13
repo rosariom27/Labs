@@ -10,12 +10,12 @@ namespace Entidades
     {
         private int _Cargo;
         private Curso _Curso;
-        private Personas _Docente;
+        private Persona _Docente;
 
         public DocenteCurso()
         {
             this._Curso = new Curso();
-            this._Docente = new Personas();
+            this._Docente = new Persona();
         }
 
         public Curso Curso
@@ -24,7 +24,7 @@ namespace Entidades
             set {_Curso = value; }
         }
 
-        public Personas Persona
+        public Persona Persona
         {
             get {return _Docente;}
             set {_Docente = value;}

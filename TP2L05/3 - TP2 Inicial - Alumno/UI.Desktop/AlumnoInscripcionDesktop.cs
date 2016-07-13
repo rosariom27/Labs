@@ -74,9 +74,9 @@ namespace UI.Desktop
 
                 this.AlumnoInscripcionActual.State = Entidad.States.New;
 
-                this.AlumnoInscripcionActual.Persona.ID = this.txtIDAlumno.Text;
-                this.AlumnoInscripcionActual.Curso.ID = this.txtIDCurso.Text;
-                this.AlumnoInscripcionActual.Nota = this.txtNota.Text;
+                this.AlumnoInscripcionActual.Persona.ID = int.Parse(this.txtIDAlumno.Text);
+                this.AlumnoInscripcionActual.Curso.ID = int.Parse(this.txtIDCurso.Text);
+                this.AlumnoInscripcionActual.Nota = int.Parse(this.txtNota.Text);
                 this.AlumnoInscripcionActual.Condicion = this.txtCondicion.Text;                               
             }
             else
@@ -85,9 +85,9 @@ namespace UI.Desktop
                 {
                     this.AlumnoInscripcionActual.State = Entidad.States.Modified;
 
-                    this.AlumnoInscripcionActual.Persona.ID = this.txtIDAlumno.Text;
-                    this.AlumnoInscripcionActual.Curso.ID = this.txtIDCurso.Text;
-                    this.AlumnoInscripcionActual.Nota = this.txtNota.Text;
+                    this.AlumnoInscripcionActual.Persona.ID = int.Parse(this.txtIDAlumno.Text);
+                    this.AlumnoInscripcionActual.Curso.ID = int.Parse(this.txtIDCurso.Text);
+                    this.AlumnoInscripcionActual.Nota = int.Parse(this.txtNota.Text);
                     this.AlumnoInscripcionActual.Condicion = this.txtCondicion.Text; 
                 }
             }

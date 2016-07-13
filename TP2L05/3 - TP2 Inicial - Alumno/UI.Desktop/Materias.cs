@@ -14,10 +14,18 @@ namespace UI.Desktop
 {
     public partial class Materias : Form
     {
-        public Materias()
+        public Materias(Usuario usr)
         {
             InitializeComponent();
+            this._usuarioActual = usr;
         }
+
+        private Usuario _usuarioActual;
+        public Usuario UsusarioActual
+        {
+            get { return _usuarioActual; }
+        }
+        
 
         private Materias _materiaActual;
         public Materias MateriaActual

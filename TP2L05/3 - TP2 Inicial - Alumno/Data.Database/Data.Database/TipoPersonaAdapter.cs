@@ -110,7 +110,7 @@ namespace Data.Database
         {
             if (tipopersona.State == Entidad.States.New)
             {
-                this.Insert(tipopersona);
+                //this.Insert(tipopersona);
             }
             else if (tipopersona.State == Entidad.States.Deleted)
             {
@@ -152,7 +152,7 @@ namespace Data.Database
             }
         }
 
-        protected void Insert(TipoPersona tipopersona)
+        /*protected void Insert(TipoPersona tipopersona)
         {
             try
             {
@@ -178,7 +178,7 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
-        }
+        } */
 
     }
 }

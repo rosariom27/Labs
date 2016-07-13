@@ -14,9 +14,14 @@ namespace UI.Desktop
 {
     public partial class Usuarios : Form
     {
-        public Usuarios()
+        public Usuarios() //para pruebas
         {
             InitializeComponent();
+        }
+        public Usuarios(Usuario usr)
+        {
+            InitializeComponent();
+            this._usuarioActual = usr;
         }
 
         private Usuario _usuarioActual;
@@ -76,10 +81,20 @@ namespace UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            int id = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+            if (this.dgvUsuarios.SelectedRows.Count != 0)
+            {
+                int ID = ((Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
+                UD.Text = "Eliminar usuario";
+                UD.ShowDialog();
+                this.Listar();
+            }
+            
+            
+            /*int id = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
             UsuarioDesktop formUsuario = new UsuarioDesktop(id, ApplicationForm.ModoForm.Baja);
             formUsuario.ShowDialog();
-            this.Listar();
+            this.Listar();*/
             
             /*
             int id = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;

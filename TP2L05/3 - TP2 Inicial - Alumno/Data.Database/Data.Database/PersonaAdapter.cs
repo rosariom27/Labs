@@ -9,14 +9,14 @@ namespace Data.Database
 {
     public class PersonaAdapter: Adapter
     {
-        public List<Personas> GetAll()
+        public List<Persona> GetAll()
         {
 
             try
             {
 
                 this.OpenConnection();
-                List<Personas> personas = new List<Personas>();
+                List<Persona> personas = new List<Persona>();
                 SqlCommand cmdPersonas = new SqlCommand("select * from personas", sqlConn);
                /* if (tipo != 0)
                 {
@@ -27,7 +27,7 @@ namespace Data.Database
 
                 while (drPersonas.Read())
                 {
-                    Personas per = new Personas();
+                    Persona per = new Persona();
                     per.ID = (int)drPersonas["id_persona"];
                     per.Nombre = (string)drPersonas["nombre"];
                     per.Apellido = (string)drPersonas["apellido"];
@@ -54,9 +54,9 @@ namespace Data.Database
 
         }
 
-        public Personas GetOne(int ID)
+        public Persona GetOne(int ID)
         {
-            Personas per = new Personas();
+            Persona per = new Persona();
 
             try
             {
@@ -125,7 +125,7 @@ namespace Data.Database
 
         }
 
-        public void Save(Personas persona)
+        public void Save(Persona persona)
         {
             if (persona.State == Entidad.States.New)
             {
@@ -142,7 +142,7 @@ namespace Data.Database
             persona.State = Entidad.States.Unmodified;
         }
 
-        public void Update(Personas persona)
+        public void Update(Persona persona)
         {
             try
             {
@@ -181,7 +181,7 @@ namespace Data.Database
             }
         }
 
-        protected void Insert(Personas persona)
+        protected void Insert(Persona persona)
         {
             try
             {

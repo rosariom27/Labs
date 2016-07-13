@@ -14,9 +14,16 @@ namespace UI.Desktop
 {
     public partial class Comisiones : Form
     {
-        public Comisiones()
+        public Comisiones(Usuario usr)
         {
             InitializeComponent();
+            this._usuarioActual = usr;
+        }
+
+        private Usuario _usuarioActual;
+        public Usuario UsusarioActual
+        {
+            get { return _usuarioActual; }
         }
 
         private Comisión _comisionActual;

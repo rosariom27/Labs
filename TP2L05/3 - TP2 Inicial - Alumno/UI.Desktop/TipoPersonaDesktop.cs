@@ -23,7 +23,7 @@ namespace UI.Desktop
             
         }
 
-         public TipoPersonaDesktop(int ID, ModoForm modo: this()
+         public TipoPersonaDesktop(int ID, ModoForm modo): this()
         {
             Modo = modo;
             TipoPersonaLogic tp = new TipoPersonaLogic();
