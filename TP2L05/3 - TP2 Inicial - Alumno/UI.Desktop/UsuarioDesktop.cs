@@ -7,7 +7,6 @@ using System.Text;
 using System.Windows.Forms;
 using Negocio;
 using Entidades;
-using System.Text.RegularExpressions;
 
 namespace UI.Desktop
 {
@@ -17,12 +16,15 @@ namespace UI.Desktop
         public UsuarioDesktop()
         {
             InitializeComponent();
+
+            this.cbTipoPersona.Items.Add("Docente");
+            this.cbTipoPersona.Items.Add("No docente");
+            this.cbTipoPersona.Items.Add("Alumno");
         }
 
         public UsuarioDesktop(ModoForm modo): this()
         {
-            Modo = modo;
-            
+            Modo = modo;   
         }
 
         public UsuarioDesktop(int ID, ModoForm modo): this()
@@ -30,9 +32,7 @@ namespace UI.Desktop
             Modo = modo;
             UsuarioLogic ul = new UsuarioLogic();
             UsuarioActual = ul.GetOne(ID);
-            this.MapearDeDatos();
-
-            
+            this.MapearDeDatos();       
         }
 
         private Usuario _usuarioActual;
@@ -47,10 +47,7 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.UsuarioActual.ID.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
-            this.txtNombre.Text = this.UsuarioActual.Nombre;
-            this.txtEmail.Text = this.UsuarioActual.Email;
             this.txtClave.Text = this.UsuarioActual.Clave;
-            this.txtApellido.Text = this.UsuarioActual.Apellido;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             
             if ( Modo == ModoForm.Alta ^ Modo == ModoForm.Modificacion)
@@ -79,10 +76,7 @@ namespace UI.Desktop
                 this.UsuarioActual.State = Entidad.States.New;
                 
                 this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                this.UsuarioActual.Nombre = this.txtNombre.Text;
-                this.UsuarioActual.Email = this.txtEmail.Text;
                 this.UsuarioActual.Clave = this.txtClave.Text;
-                this.UsuarioActual.Apellido = this.txtApellido.Text;
                 this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
 
                                
@@ -94,10 +88,7 @@ namespace UI.Desktop
                     this.UsuarioActual.State = Entidad.States.Modified;
 
                     this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                    this.UsuarioActual.Nombre = this.txtNombre.Text;
-                    this.UsuarioActual.Email= this.txtEmail.Text;
                     this.UsuarioActual.Clave = this.txtClave.Text;
-                    this.UsuarioActual.Apellido = this.txtApellido.Text;
                     this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                 }
             }
@@ -112,21 +103,6 @@ namespace UI.Desktop
         public virtual bool Validar()
       
         {
-                if ( (string.IsNullOrEmpty(this.txtNombre.Text)) )
-                {
-                    this.Notificar("Advertencia","No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );                    
-                    return false;
-                }
-                if ( (string.IsNullOrEmpty(this.txtApellido.Text)) )
-                {
-                    this.Notificar("Advertencia", "No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return false;
-                }
-                if ( (string.IsNullOrEmpty(this.txtEmail.Text)) )
-                {
-                    this.Notificar("Advertencia", "No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return false;
-                }
                 if ( (string.IsNullOrEmpty(this.txtUsuario.Text)) )
                 {
                     this.Notificar("Advertencia", "No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -146,22 +122,7 @@ namespace UI.Desktop
                  {
                      if ((this.txtClave.TextLength) <= 8)
                      {
-
-                        string expresion;
-                        expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-                        if (Regex.IsMatch(this.txtEmail.Text, expresion))
-                        {
-                             return true;
-                        }
-                        else 
-                        {
-                                 this.Notificar("Advertencia","El email no es válido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                  }
-                   
-                 else 
-                     {
-                         this.Notificar("Advertencia","La clave excede los ocho caracteres", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        this.Notificar("Advertencia","La clave excede los ocho caracteres", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                      }      
                  }
                  else
@@ -195,9 +156,7 @@ namespace UI.Desktop
                             this.Close();
                         }
                      }
-         }
-
-        
+         }        
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

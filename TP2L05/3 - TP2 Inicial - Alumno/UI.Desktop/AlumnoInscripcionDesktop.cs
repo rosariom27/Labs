@@ -15,6 +15,11 @@ namespace UI.Desktop
         public AlumnoInscripcionDesktop()
         {
             InitializeComponent();
+
+            CursoLogic cl = new CursoLogic();
+            this.cbIDCurso.DataSource = cl.GetAll();
+            this.cbIDCurso.DisplayMember = "id";
+            this.cbIDCurso.ValueMember = "id";
         }
 
          public AlumnoInscripcionDesktop(ModoForm modo): this()
@@ -44,7 +49,7 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.AlumnoInscripcionActual.ID.ToString();
             this.txtIDAlumno.Text = this.AlumnoInscripcionActual.Persona.ID.ToString();
-            this.txtIDCurso.Text = this.AlumnoInscripcionActual.Curso.ID.ToString();
+            this.cbIDCurso.Text = this.AlumnoInscripcionActual.Curso.ID.ToString();
             this.txtNota.Text = this.AlumnoInscripcionActual.Nota.ToString();
             this.txtCondicion.Text = this.AlumnoInscripcionActual.Condicion;
             
@@ -75,7 +80,7 @@ namespace UI.Desktop
                 this.AlumnoInscripcionActual.State = Entidad.States.New;
 
                 this.AlumnoInscripcionActual.Persona.ID = int.Parse(this.txtIDAlumno.Text);
-                this.AlumnoInscripcionActual.Curso.ID = int.Parse(this.txtIDCurso.Text);
+                this.AlumnoInscripcionActual.Curso.ID = int.Parse(this.cbIDCurso.Text);
                 this.AlumnoInscripcionActual.Nota = int.Parse(this.txtNota.Text);
                 this.AlumnoInscripcionActual.Condicion = this.txtCondicion.Text;                               
             }
@@ -86,7 +91,7 @@ namespace UI.Desktop
                     this.AlumnoInscripcionActual.State = Entidad.States.Modified;
 
                     this.AlumnoInscripcionActual.Persona.ID = int.Parse(this.txtIDAlumno.Text);
-                    this.AlumnoInscripcionActual.Curso.ID = int.Parse(this.txtIDCurso.Text);
+                    this.AlumnoInscripcionActual.Curso.ID = int.Parse(this.cbIDCurso.Text);
                     this.AlumnoInscripcionActual.Nota = int.Parse(this.txtNota.Text);
                     this.AlumnoInscripcionActual.Condicion = this.txtCondicion.Text; 
                 }

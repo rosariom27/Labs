@@ -48,7 +48,7 @@ namespace UI.Desktop
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
             this.txtHSSemanales.Text = this.MateriaActual.HSSemanales.ToString();
             this.txtHSTotales.Text = this.MateriaActual.HSTotales.ToString();
-            this.txtIDPlan.Text = this.MateriaActual.Plan.ID.ToString();
+            this.cbIDPlan.Text = this.MateriaActual.Plan.ID.ToString();
                         
             if ( Modo == ModoForm.Alta ^ Modo == ModoForm.Modificacion)
             { 
@@ -79,7 +79,7 @@ namespace UI.Desktop
                 this.MateriaActual.Descripcion = this.txtDescripcion.Text;
                 this.MateriaActual.HSSemanales = int.Parse(this.txtHSSemanales.Text);
                 this.MateriaActual.HSTotales = int.Parse(this.txtHSTotales.Text);
-                this.MateriaActual.Plan.ID = int.Parse(this.txtIDPlan.Text);
+                this.MateriaActual.Plan.ID = int.Parse(this.cbIDPlan.Text);
                                                
             }
             else
@@ -91,7 +91,7 @@ namespace UI.Desktop
                     this.MateriaActual.Descripcion = this.txtDescripcion.Text;
                     this.MateriaActual.HSSemanales = int.Parse(this.txtHSSemanales.Text);
                     this.MateriaActual.HSTotales = int.Parse(this.txtHSTotales.Text);
-                    this.MateriaActual.Plan.ID = int.Parse(this.txtIDPlan.Text);
+                    this.MateriaActual.Plan.ID = int.Parse(this.cbIDPlan.Text);
                 }
             }
         }

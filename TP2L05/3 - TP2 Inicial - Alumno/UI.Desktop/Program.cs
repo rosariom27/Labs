@@ -16,7 +16,7 @@ namespace UI.Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Especialidades());
+            Application.Run(new Usuarios()); //solo para prueba
             /*Login login = new Login();
             if (login.ShowDialog() == DialogResult.OK) Application.Run(new MainMenu(login.UsuarioActual));
             else Application.Exit();*/

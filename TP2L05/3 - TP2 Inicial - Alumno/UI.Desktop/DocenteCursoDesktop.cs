@@ -44,7 +44,7 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.DocenteCursoActual.ID.ToString();
             this.txtIDDocente.Text = this.DocenteCursoActual.Persona.ID.ToString();
-            this.txtIDCurso.Text = this.DocenteCursoActual.Curso.ID.ToString();
+            this.cbIDCurso.Text = this.DocenteCursoActual.Curso.ID.ToString();
             this.txtCargo.Text = this.DocenteCursoActual.Cargo.ToString();
             
             if ( Modo == ModoForm.Alta ^ Modo == ModoForm.Modificacion)
@@ -72,8 +72,8 @@ namespace UI.Desktop
 
                 this.DocenteCursoActual.State = Entidad.States.New;
 
-                this.DocenteCursoActual.Persona.ID = int.Parse(this.txtIDCurso.Text);
-                this.DocenteCursoActual.Curso.ID = int.Parse(this.txtIDCurso.Text);
+                this.DocenteCursoActual.Persona.ID = int.Parse(this.txtIDDocente.Text);
+                this.DocenteCursoActual.Curso.ID = int.Parse(this.cbIDCurso.Text);
                 this.DocenteCursoActual.Cargo = int.Parse(this.txtCargo.Text); 
             }
             else
@@ -82,8 +82,8 @@ namespace UI.Desktop
                 {
                     this.DocenteCursoActual.State = Entidad.States.Modified;
 
-                    this.DocenteCursoActual.Persona.ID = int.Parse(this.txtIDCurso.Text);
-                    this.DocenteCursoActual.Curso.ID = int.Parse(this.txtIDCurso.Text);
+                    this.DocenteCursoActual.Persona.ID = int.Parse(this.txtIDDocente.Text);
+                    this.DocenteCursoActual.Curso.ID = int.Parse(this.cbIDCurso.Text);
                     this.DocenteCursoActual.Cargo = int.Parse(this.txtCargo.Text); 
                 }
             }

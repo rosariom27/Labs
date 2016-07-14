@@ -44,7 +44,7 @@ namespace UI.Desktop
      public virtual void MapearDeDatos() 
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
-            this.txtIDEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
+            this.cbIDEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
             
             if ( Modo == ModoForm.Alta ^ Modo == ModoForm.Modificacion)

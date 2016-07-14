@@ -33,10 +33,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtIDEspecialidad = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cbIDEspecialidad = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,10 +49,10 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIDEspecialidad, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cbIDEspecialidad, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -99,13 +99,6 @@
             this.txtID.Size = new System.Drawing.Size(176, 20);
             this.txtID.TabIndex = 3;
             // 
-            // txtIDEspecialidad
-            // 
-            this.txtIDEspecialidad.Location = new System.Drawing.Point(205, 68);
-            this.txtIDEspecialidad.Name = "txtIDEspecialidad";
-            this.txtIDEspecialidad.Size = new System.Drawing.Size(176, 20);
-            this.txtIDEspecialidad.TabIndex = 4;
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(205, 133);
@@ -136,6 +129,15 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
+            // cbIDEspecialidad
+            // 
+            this.cbIDEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIDEspecialidad.FormattingEnabled = true;
+            this.cbIDEspecialidad.Location = new System.Drawing.Point(205, 68);
+            this.cbIDEspecialidad.Name = "cbIDEspecialidad";
+            this.cbIDEspecialidad.Size = new System.Drawing.Size(176, 21);
+            this.cbIDEspecialidad.TabIndex = 8;
+            // 
             // PlanDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,9 +157,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtIDEspecialidad;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cbIDEspecialidad;
     }
 }

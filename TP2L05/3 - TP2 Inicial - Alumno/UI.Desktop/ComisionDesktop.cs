@@ -45,7 +45,7 @@ namespace UI.Desktop
             this.txtID.Text = this.ComisionActual.ID.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion;   
             this.txtAnioEspecialidad.Text = this.ComisionActual.AnioEspecialidad.ToString();
-            this.txtIDPlan.Text = this.ComisionActual.Plan.ID.ToString();
+            this.cbIDPlan.Text = this.ComisionActual.Plan.ID.ToString();
             
             
             if ( Modo == ModoForm.Alta ^ Modo == ModoForm.Modificacion)

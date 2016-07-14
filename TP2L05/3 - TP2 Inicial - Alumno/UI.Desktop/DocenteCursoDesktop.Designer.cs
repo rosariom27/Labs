@@ -34,11 +34,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtIDCurso = new System.Windows.Forms.TextBox();
             this.txtIDDocente = new System.Windows.Forms.TextBox();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cbIDCurso = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,17 +48,17 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.0339F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.9661F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIDCurso, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtIDDocente, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtCargo, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cbIDCurso, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -90,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(238, 0);
+            this.label3.Location = new System.Drawing.Point(237, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 2;
@@ -99,7 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(238, 65);
+            this.label4.Location = new System.Drawing.Point(237, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 3;
@@ -107,28 +107,22 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(114, 3);
+            this.txtID.Location = new System.Drawing.Point(113, 3);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(118, 20);
             this.txtID.TabIndex = 4;
             // 
-            // txtIDCurso
-            // 
-            this.txtIDCurso.Location = new System.Drawing.Point(114, 68);
-            this.txtIDCurso.Name = "txtIDCurso";
-            this.txtIDCurso.Size = new System.Drawing.Size(118, 20);
-            this.txtIDCurso.TabIndex = 5;
-            // 
             // txtIDDocente
             // 
-            this.txtIDDocente.Location = new System.Drawing.Point(372, 3);
+            this.txtIDDocente.Location = new System.Drawing.Point(371, 3);
             this.txtIDDocente.Name = "txtIDDocente";
             this.txtIDDocente.Size = new System.Drawing.Size(169, 20);
             this.txtIDDocente.TabIndex = 6;
             // 
             // txtCargo
             // 
-            this.txtCargo.Location = new System.Drawing.Point(372, 68);
+            this.txtCargo.Location = new System.Drawing.Point(371, 68);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(169, 20);
             this.txtCargo.TabIndex = 7;
@@ -136,7 +130,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAceptar.Location = new System.Drawing.Point(291, 133);
+            this.btnAceptar.Location = new System.Drawing.Point(290, 133);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 51);
             this.btnAceptar.TabIndex = 8;
@@ -154,6 +148,15 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // cbIDCurso
+            // 
+            this.cbIDCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbIDCurso.FormattingEnabled = true;
+            this.cbIDCurso.Location = new System.Drawing.Point(113, 68);
+            this.cbIDCurso.Name = "cbIDCurso";
+            this.cbIDCurso.Size = new System.Drawing.Size(118, 21);
+            this.cbIDCurso.TabIndex = 10;
             // 
             // DocenteCursoDesktop
             // 
@@ -175,10 +178,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtIDCurso;
         private System.Windows.Forms.TextBox txtIDDocente;
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ComboBox cbIDCurso;
     }
 }

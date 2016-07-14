@@ -41,8 +41,8 @@ namespace UI.Desktop
         public virtual void MapearDeDatos() 
         {
             this.txtID.Text = this.CursoActual.ID.ToString();
-            this.txtIDMateria.Text = this.CursoActual.Materia.ID.ToString();
-            this.txtIDComision.Text = this.CursoActual.Comision.ID.ToString();
+            this.cbIDMateria.Text = this.CursoActual.Materia.ID.ToString();
+            this.cbIDComision.Text = this.CursoActual.Comision.ID.ToString();
             this.txtAnioCalendario.Text = this.CursoActual.AnioCalendario.ToString();
             this.txtCupo.Text = this.CursoActual.Cupo.ToString();
             
@@ -72,8 +72,8 @@ namespace UI.Desktop
 
                 this.CursoActual.State = Entidad.States.New;
 
-                this.CursoActual.Materia.ID = int.Parse(this.txtIDMateria.Text);
-                this.CursoActual.Comision.ID = int.Parse(this.txtIDComision.Text);
+                this.CursoActual.Materia.ID = int.Parse(this.cbIDMateria.Text);
+                this.CursoActual.Comision.ID = int.Parse(this.cbIDComision.Text);
                 this.CursoActual.AnioCalendario = int.Parse(this.txtAnioCalendario.Text);
                 this.CursoActual.Cupo = int.Parse(this.txtCupo.Text);
             }
@@ -83,8 +83,8 @@ namespace UI.Desktop
                 {
                     this.CursoActual.State = Entidad.States.Modified;
 
-                    this.CursoActual.Materia.ID = int.Parse(this.txtIDMateria.Text);
-                    this.CursoActual.Comision.ID = int.Parse(this.txtIDComision.Text);
+                    this.CursoActual.Materia.ID = int.Parse(this.cbIDMateria.Text);
+                    this.CursoActual.Comision.ID = int.Parse(this.cbIDComision.Text);
                     this.CursoActual.AnioCalendario = int.Parse(this.txtAnioCalendario.Text);
                     this.CursoActual.Cupo = int.Parse(this.txtCupo.Text);
                 }
