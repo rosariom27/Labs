@@ -14,6 +14,11 @@ namespace UI.Desktop
 {
     public partial class Cursos : Form
     {
+        public Cursos()
+        {
+            InitializeComponent();
+        }
+        
         public Cursos(Usuario usr)
         {
             InitializeComponent();

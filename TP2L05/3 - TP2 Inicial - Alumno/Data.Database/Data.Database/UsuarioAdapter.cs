@@ -228,18 +228,16 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-
-                SqlCommand cmdSave = new SqlCommand("insert into usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email) " +
-                "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email)" + "select @@identity", sqlConn);
+                //debería también insertar nombre, apellido e email en BD
+                SqlCommand cmdSave = new SqlCommand("insert into usuarios (nombre_usuario, clave, habilitado) " +
+                "values(@nombre_usuario, @clave, @habilitado)" + "select @@identity", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
                             
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
-                cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
-                cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Email;
+                
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
 

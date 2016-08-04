@@ -14,6 +14,11 @@ namespace UI.Desktop
 {
     public partial class Materias : Form
     {
+        public Materias()
+        {
+            InitializeComponent();
+        }
+        
         public Materias(Usuario usr)
         {
             InitializeComponent();

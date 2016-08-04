@@ -44,6 +44,9 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblConfirmarClave = new System.Windows.Forms.Label();
             this.txtConfirmarClave = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.mskIDPersona = new System.Windows.Forms.MaskedTextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personasBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -54,8 +57,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.lblID, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblClave, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 2, 0);
@@ -67,38 +70,44 @@
             this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblConfirmarClave, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.mskIDPersona, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.btnBuscar, 2, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 7;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(399, 250);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(513, 327);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // btnAceptar
             // 
             this.btnAceptar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAceptar.Location = new System.Drawing.Point(85, 193);
+            this.btnAceptar.Location = new System.Drawing.Point(141, 283);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(72, 54);
-            this.btnAceptar.TabIndex = 19;
+            this.btnAceptar.Size = new System.Drawing.Size(72, 41);
+            this.btnAceptar.TabIndex = 23;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_2);
             // 
             // btnCancelar
             // 
             this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCancelar.Location = new System.Drawing.Point(242, 193);
+            this.btnCancelar.Location = new System.Drawing.Point(354, 283);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 54);
-            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.Size = new System.Drawing.Size(75, 41);
+            this.btnCancelar.TabIndex = 22;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // lblID
             // 
@@ -112,7 +121,7 @@
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(3, 108);
+            this.lblClave.Location = new System.Drawing.Point(3, 141);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(34, 13);
             this.lblClave.TabIndex = 3;
@@ -121,7 +130,7 @@
             // chkHabilitado
             // 
             this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(323, 3);
+            this.chkHabilitado.Location = new System.Drawing.Point(435, 3);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
             this.chkHabilitado.TabIndex = 7;
@@ -130,7 +139,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(163, 3);
+            this.txtID.Location = new System.Drawing.Point(219, 3);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(154, 20);
@@ -138,7 +147,7 @@
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(163, 111);
+            this.txtClave.Location = new System.Drawing.Point(219, 144);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(154, 20);
             this.txtClave.TabIndex = 13;
@@ -146,7 +155,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 36);
+            this.label1.Location = new System.Drawing.Point(3, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 20;
@@ -158,7 +167,7 @@
             this.cbTipoPersona.DisplayMember = "ID";
             this.cbTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoPersona.FormattingEnabled = true;
-            this.cbTipoPersona.Location = new System.Drawing.Point(163, 39);
+            this.cbTipoPersona.Location = new System.Drawing.Point(219, 50);
             this.cbTipoPersona.Name = "cbTipoPersona";
             this.cbTipoPersona.Size = new System.Drawing.Size(154, 21);
             this.cbTipoPersona.TabIndex = 21;
@@ -171,7 +180,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(3, 72);
+            this.lblUsuario.Location = new System.Drawing.Point(3, 94);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 5;
@@ -179,7 +188,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(163, 75);
+            this.txtUsuario.Location = new System.Drawing.Point(219, 97);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(154, 20);
             this.txtUsuario.TabIndex = 15;
@@ -187,7 +196,7 @@
             // lblConfirmarClave
             // 
             this.lblConfirmarClave.AutoSize = true;
-            this.lblConfirmarClave.Location = new System.Drawing.Point(3, 144);
+            this.lblConfirmarClave.Location = new System.Drawing.Point(3, 188);
             this.lblConfirmarClave.Name = "lblConfirmarClave";
             this.lblConfirmarClave.Size = new System.Drawing.Size(81, 13);
             this.lblConfirmarClave.TabIndex = 6;
@@ -195,15 +204,43 @@
             // 
             // txtConfirmarClave
             // 
-            this.txtConfirmarClave.Location = new System.Drawing.Point(163, 147);
+            this.txtConfirmarClave.Location = new System.Drawing.Point(219, 191);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
             this.txtConfirmarClave.Size = new System.Drawing.Size(154, 20);
             this.txtConfirmarClave.TabIndex = 16;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 248);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "ID Persona";
+            // 
+            // mskIDPersona
+            // 
+            this.mskIDPersona.Location = new System.Drawing.Point(219, 251);
+            this.mskIDPersona.Mask = "99999";
+            this.mskIDPersona.Name = "mskIDPersona";
+            this.mskIDPersona.Size = new System.Drawing.Size(154, 20);
+            this.mskIDPersona.TabIndex = 25;
+            this.mskIDPersona.ValidatingType = typeof(int);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(435, 251);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 26;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // UsuarioDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(399, 250);
+            this.ClientSize = new System.Drawing.Size(513, 327);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UsuarioDesktop";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -225,10 +262,13 @@
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtConfirmarClave;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbTipoPersona;
         private System.Windows.Forms.BindingSource personasBindingSource;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.MaskedTextBox mskIDPersona;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

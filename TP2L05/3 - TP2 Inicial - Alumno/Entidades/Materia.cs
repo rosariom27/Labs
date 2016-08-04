@@ -11,6 +11,7 @@ namespace Entidades
         private string _Descripcion;
         private int _HSSemanales;
         private int _HSTotales;
+        private int _IDPlan;
         private Plan _Plan;
 
         public string Descripcion
@@ -18,13 +19,11 @@ namespace Entidades
             get { return _Descripcion; }
             set { _Descripcion = value; }
         }
-
         public int HSSemanales
         {
             get { return _HSSemanales; }
             set { _HSSemanales = value; }
         }
-
         public int HSTotales
         {
             get { return _HSTotales; }
@@ -50,11 +49,6 @@ namespace Entidades
         public string DescPlan
         {
             get { return _Plan.Descripcion; }
-        }
-
-        public string DescEspecialidad
-        {
-            get { return _Plan.DescEspecialidad; }
         }
     }
 }

@@ -21,12 +21,16 @@ namespace UI.Desktop
 
             PlanLogic PL = new PlanLogic();
             this.cbIDPlan.DataSource = PL.GetAll();
-            this.cbIDPlan.DisplayMember = "descripcion";
+            this.cbIDPlan.DisplayMember = "desc_plan";
             this.cbIDPlan.ValueMember = "id_plan";
 
-            this.cbTipoPersona.Items.Add("Docente");
+            TipoPersonaLogic TP = new TipoPersonaLogic();
+            this.cbTipoPersona.DataSource = TP.GetAll();
+            this.cbTipoPersona.DisplayMember = "_descripcion";
+            this.cbTipoPersona.ValueMember = "_ID";
+            /*this.cbTipoPersona.Items.Add("Docente");
             this.cbTipoPersona.Items.Add("No docente");
-            this.cbTipoPersona.Items.Add("Alumno");
+            this.cbTipoPersona.Items.Add("Alumno");*/
         }
 
         private Persona _personaActual;
@@ -138,26 +142,26 @@ namespace UI.Desktop
         {
             if ((string.IsNullOrEmpty(this.txtNombre.Text)))
             {
-                this.Notificar("Advertencia", "No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Notificar("No se completaron todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             if ((string.IsNullOrEmpty(this.txtApellido.Text)))
             {
-                this.Notificar("Advertencia", "No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Notificar("No se completaron todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             if ((string.IsNullOrEmpty(this.txtEmail.Text)))
             {
-                this.Notificar("Advertencia", "No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Notificar("No se completaron todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             if ((string.IsNullOrEmpty(this.txtDireccion.Text)))
             {
-                this.Notificar("Advertencia", "No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Notificar("No se completaron todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             //faltaria los combo
-            return false;
+            return true;
         }
 
         public new void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)

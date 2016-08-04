@@ -31,26 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Materias));
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.tlMaterias = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvMaterias = new System.Windows.Forms.DataGridView();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.tsMaterias = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tlMaterias = new System.Windows.Forms.TableLayoutPanel();
-            this.dgvMaterias = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDPlan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HSSemanales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HSTotales = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
-            this.tsMaterias.SuspendLayout();
             this.tlMaterias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).BeginInit();
+            this.tsMaterias.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStripContainer1
@@ -67,9 +62,58 @@
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
-            // toolStripContainer1.tcMaterias
+            // toolStripContainer1.TopToolStripPanel
             // 
             this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.tsMaterias);
+            // 
+            // tlMaterias
+            // 
+            this.tlMaterias.ColumnCount = 2;
+            this.tlMaterias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.57188F));
+            this.tlMaterias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.42812F));
+            this.tlMaterias.Controls.Add(this.dgvMaterias, 0, 0);
+            this.tlMaterias.Controls.Add(this.btnActualizar, 0, 1);
+            this.tlMaterias.Controls.Add(this.btnSalir, 1, 1);
+            this.tlMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlMaterias.Location = new System.Drawing.Point(0, 0);
+            this.tlMaterias.Name = "tlMaterias";
+            this.tlMaterias.RowCount = 2;
+            this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.97318F));
+            this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.02682F));
+            this.tlMaterias.Size = new System.Drawing.Size(633, 261);
+            this.tlMaterias.TabIndex = 0;
+            // 
+            // dgvMaterias
+            // 
+            this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tlMaterias.SetColumnSpan(this.dgvMaterias, 2);
+            this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMaterias.Location = new System.Drawing.Point(3, 3);
+            this.dgvMaterias.Name = "dgvMaterias";
+            this.dgvMaterias.Size = new System.Drawing.Size(627, 221);
+            this.dgvMaterias.TabIndex = 0;
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnActualizar.Location = new System.Drawing.Point(469, 230);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(75, 28);
+            this.btnActualizar.TabIndex = 1;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSalir.Location = new System.Drawing.Point(555, 230);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 28);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // tsMaterias
             // 
@@ -80,7 +124,7 @@
             this.tsbEliminar});
             this.tsMaterias.Location = new System.Drawing.Point(3, 0);
             this.tsMaterias.Name = "tsMaterias";
-            this.tsMaterias.Size = new System.Drawing.Size(112, 25);
+            this.tsMaterias.Size = new System.Drawing.Size(81, 25);
             this.tsMaterias.TabIndex = 0;
             // 
             // tsbNuevo
@@ -118,88 +162,6 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // tlMaterias
-            // 
-            this.tlMaterias.ColumnCount = 2;
-            this.tlMaterias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.57188F));
-            this.tlMaterias.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.42812F));
-            this.tlMaterias.Controls.Add(this.dgvMaterias, 0, 0);
-            this.tlMaterias.Controls.Add(this.btnActualizar, 0, 1);
-            this.tlMaterias.Controls.Add(this.btnSalir, 1, 1);
-            this.tlMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlMaterias.Location = new System.Drawing.Point(0, 0);
-            this.tlMaterias.Name = "tlMaterias";
-            this.tlMaterias.RowCount = 2;
-            this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.97318F));
-            this.tlMaterias.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.02682F));
-            this.tlMaterias.Size = new System.Drawing.Size(633, 261);
-            this.tlMaterias.TabIndex = 0;
-            // 
-            // dgvMaterias
-            // 
-            this.dgvMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.IDPlan,
-            this.Descripcion,
-            this.HSSemanales,
-            this.HSTotales});
-            this.tlMaterias.SetColumnSpan(this.dgvMaterias, 2);
-            this.dgvMaterias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMaterias.Location = new System.Drawing.Point(3, 3);
-            this.dgvMaterias.Name = "dgvMaterias";
-            this.dgvMaterias.Size = new System.Drawing.Size(627, 221);
-            this.dgvMaterias.TabIndex = 0;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnActualizar.Location = new System.Drawing.Point(469, 230);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(75, 28);
-            this.btnActualizar.TabIndex = 1;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnSalir.Location = new System.Drawing.Point(555, 230);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 28);
-            this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // IDPlan
-            // 
-            this.IDPlan.HeaderText = "ID Plan";
-            this.IDPlan.Name = "IDPlan";
-            this.IDPlan.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // HSSemanales
-            // 
-            this.HSSemanales.HeaderText = "Horas Semanales";
-            this.HSSemanales.Name = "HSSemanales";
-            // 
-            // HSTotales
-            // 
-            this.HSTotales.HeaderText = "Horas Totales";
-            this.HSTotales.Name = "HSTotales";
-            // 
             // Materias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,10 +176,10 @@
             this.toolStripContainer1.TopToolStripPanel.PerformLayout();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
-            this.tsMaterias.ResumeLayout(false);
-            this.tsMaterias.PerformLayout();
             this.tlMaterias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterias)).EndInit();
+            this.tsMaterias.ResumeLayout(false);
+            this.tsMaterias.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -234,10 +196,5 @@
         private System.Windows.Forms.DataGridView dgvMaterias;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDPlan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HSSemanales;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HSTotales;
     }
 }

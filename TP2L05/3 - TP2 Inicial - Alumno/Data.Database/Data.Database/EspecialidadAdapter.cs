@@ -13,7 +13,6 @@ namespace Data.Database
 
         public List<Especialidad> GetAll()
         {
-
             try
             {
 
@@ -131,7 +130,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("UPDATE especialidades SET desc_especialidad=@desc_especialidad" +
+                SqlCommand cmdSave = new SqlCommand("UPDATE especialidades SET desc_especialidad=@desc_especialidad " +
                     "WHERE id_especialidad=@id", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
@@ -168,6 +167,7 @@ namespace Data.Database
                 cmdSave.CommandType = CommandType.Text;
 
                 cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = especialidad.Descripcion;
+                especialidad.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
                
             }
 

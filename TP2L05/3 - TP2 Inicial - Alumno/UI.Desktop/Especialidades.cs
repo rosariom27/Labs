@@ -52,18 +52,7 @@ namespace UI.Desktop
                 throw ExcepcionManejada;
             }
         }
-        
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            this.Listar(); //terminar
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close(); //terminar
-        }
-
-
+      
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
             MessageBox.Show(mensaje, titulo, botones, icono);
@@ -92,11 +81,30 @@ namespace UI.Desktop
 
         private void tsbEliminar_Click_1(object sender, EventArgs e)
         {
-            this.Notificar("Advertencia", "¿Desea eliminar esta especialidad?", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            /*this.Notificar("Advertencia", "¿Desea eliminar esta especialidad?", MessageBoxButtons.OK, MessageBoxIcon.Question);
             //¿CÓMO ELIMINO?
             EspecialidadLogic esp = new EspecialidadLogic();
             esp.Save(EspecialidadActual);
+            this.Listar();*/
+            if (this.dgvEspecialidades.SelectedRows.Count != 0)
+            {
+                int ID = ((Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
+                EspecialidadDesktop UD = new EspecialidadDesktop(ID, ApplicationForm.ModoForm.Baja);
+                UD.Text = "Eliminar especialidad";
+                UD.ShowDialog();
+                this.Listar();
+            }
+            
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
             this.Listar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

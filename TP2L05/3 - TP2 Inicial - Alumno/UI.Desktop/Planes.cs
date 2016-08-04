@@ -14,6 +14,12 @@ namespace UI.Desktop
 {
     public partial class Planes : Form
     {
+         public Planes()
+        { 
+             InitializeComponent();
+        }
+        
+            
         public Planes(Usuario usr)
         {
             InitializeComponent();

@@ -20,8 +20,7 @@ namespace UI.Desktop
 
         public EspecialidadDesktop(ModoForm modo): this()
         {
-            Modo = modo;
-            
+            Modo = modo;            
         }
 
         public EspecialidadDesktop(int ID, ModoForm modo): this()
@@ -66,26 +65,19 @@ namespace UI.Desktop
         }
         public virtual void MapearADatos()
         {
-
             if (Modo == ModoForm.Alta)
             {
                 Especialidad esp = new Especialidad();
                 this.EspecialidadActual = esp;
-
                 this.EspecialidadActual.State = Entidad.States.New;
-
                 this.EspecialidadActual.Descripcion = this.txtDescripcion.Text;
-
-
             }
             else
             {
                 if (Modo == ModoForm.Modificacion)
                 {
                     this.EspecialidadActual.State = Entidad.States.Modified;
-
-                    this.EspecialidadActual.Descripcion = this.txtDescripcion.Text;
-                    
+                    this.EspecialidadActual.Descripcion = this.txtDescripcion.Text;                    
                 }
             }
         }
@@ -93,20 +85,18 @@ namespace UI.Desktop
         public virtual void GuardarCambios()
         {
             this.MapearADatos();
-            EspecialidadLogic esp = new EspecialidadLogic();
-            esp.Save(EspecialidadActual);
+            EspecialidadLogic es = new EspecialidadLogic();
+            es.Save(EspecialidadActual);
         }
         public virtual bool Validar()
         {
-
-
             if ((string.IsNullOrEmpty(this.txtDescripcion.Text)))
             {
                 this.Notificar("Advertencia", "No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
            
-            return false;
+            return true;
         }
 
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)

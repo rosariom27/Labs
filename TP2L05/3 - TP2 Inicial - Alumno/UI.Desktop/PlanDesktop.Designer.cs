@@ -131,12 +131,14 @@
             // 
             // cbIDEspecialidad
             // 
+            this.cbIDEspecialidad.DisplayMember = "desc_especialidad";
             this.cbIDEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDEspecialidad.FormattingEnabled = true;
             this.cbIDEspecialidad.Location = new System.Drawing.Point(205, 68);
             this.cbIDEspecialidad.Name = "cbIDEspecialidad";
             this.cbIDEspecialidad.Size = new System.Drawing.Size(176, 21);
             this.cbIDEspecialidad.TabIndex = 8;
+            this.cbIDEspecialidad.ValueMember = "id_especialidad";
             // 
             // PlanDesktop
             // 

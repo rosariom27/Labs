@@ -37,8 +37,7 @@ namespace UI.Desktop
             get { return _tipoPersonaActual; }
             set { _tipoPersonaActual = value; }
         }
-
-        
+                
         public virtual void MapearDeDatos() 
         {
             this.txtID.Text = this.TipoPersonaActual.ID.ToString();
@@ -96,7 +95,7 @@ namespace UI.Desktop
                     this.Notificar("Advertencia","No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );                    
                     return false;
                 }
-                return false;
+                return true;
         }
 
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
@@ -107,22 +106,15 @@ namespace UI.Desktop
         {
             this.Notificar(this.Text, mensaje, botones, icono);
         }
-
-        private void btnAceptar_Click(object sender, EventArgs e)
+      
+        private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            if(Modo == ModoForm.Baja)
+            if (this.Validar() == true)
             {
                 this.GuardarCambios();
                 this.Close();
             }
-
-                else 
-                     {  if (this.Validar() == true)
-                        {   this.GuardarCambios();
-                            this.Close();
-                        }
-                     }
-         }        
+        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

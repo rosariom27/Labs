@@ -16,12 +16,16 @@ namespace UI.Desktop
         public PlanDesktop()
         {
             InitializeComponent();
+
+            EspecialidadLogic ES = new EspecialidadLogic();
+            this.cbIDEspecialidad.DataSource = ES.GetAll();
+            this.cbIDEspecialidad.DisplayMember = "desc_especialidad";
+            this.cbIDEspecialidad.ValueMember = "id_especialidad";
         }
 
      public PlanDesktop(ModoForm modo): this()
         {
-            Modo = modo;
-            
+            Modo = modo;            
         }
 
      public PlanDesktop(int ID, ModoForm modo) : this()
@@ -29,9 +33,7 @@ namespace UI.Desktop
             Modo = modo;
             PlanLogic pl = new PlanLogic();
             PlanActual = pl.GetOne(ID);
-            this.MapearDeDatos();
-
-            
+            this.MapearDeDatos();            
         }
 
      private Plan _planActual;
@@ -58,8 +60,7 @@ namespace UI.Desktop
                                         else {  
                                                 this.btnAceptar.Text = "Aceptar"; 
                                              }
-                        }
-            
+                        }      
             
         }
      public virtual void MapearADatos()
@@ -99,7 +100,7 @@ namespace UI.Desktop
                     this.Notificar("Advertencia","No se completaron todos los campos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );                    
                     return false;
                 }
-                    return false;
+                    return true;
         }
      public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
@@ -122,7 +123,6 @@ namespace UI.Desktop
         {
             this.Close();
         }
-    
-    
+        
     }
 }
