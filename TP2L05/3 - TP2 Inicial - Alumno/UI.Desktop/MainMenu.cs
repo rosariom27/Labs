@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocio;
@@ -28,23 +28,7 @@ namespace UI.Desktop
 
         private void mnuCerrarSesion_Click(object sender, EventArgs e)
         {
-            foreach (Form frm in this.MdiChildren)
-            {
-                frm.Dispose();
-            }
-            this.Visible = false;
-            Login login = new Login();
-            if (login.ShowDialog() == DialogResult.OK)
-            {
-                this._usuarioActual = login.UsuarioActual;
-                //this.permisos();
-                this.Visible = true;
-                //this.tsbsUsuarios.Text = this._usuarioActual.NombreUsuario;
-            }
-            else
-            {
-                this.Close();
-            }
+            this.Close();
         }
         
         /*private void mnuRegistrarAlumno_Click(object sender, EventArgs e)
@@ -57,12 +41,13 @@ namespace UI.Desktop
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+            
             //completar
         }
 
         private void mnuSalir_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Close();
         }
 
         private void mnuUsuarios_Click(object sender, EventArgs e)

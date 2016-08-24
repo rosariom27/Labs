@@ -15,6 +15,16 @@ namespace UI.Desktop
         public CursoDesktop()
         {
             InitializeComponent();
+
+            MateriaLogic ml = new MateriaLogic();
+            this.cbIDMateria.DataSource = ml.GetAll();
+            this.cbIDMateria.DisplayMember = "ID";
+            this.cbIDMateria.ValueMember = "ID";
+
+            ComisionLogic cl = new ComisionLogic();
+            this.cbIDComision.DataSource = cl.GetAll();
+            this.cbIDComision.DisplayMember = " ID";
+            this.cbIDComision.ValueMember = "ID";
         }
 
         public CursoDesktop(ModoForm modo): this()

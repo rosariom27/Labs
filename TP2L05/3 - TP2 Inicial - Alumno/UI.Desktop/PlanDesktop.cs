@@ -19,8 +19,8 @@ namespace UI.Desktop
 
             EspecialidadLogic ES = new EspecialidadLogic();
             this.cbIDEspecialidad.DataSource = ES.GetAll();
-            this.cbIDEspecialidad.DisplayMember = "desc_especialidad";
-            this.cbIDEspecialidad.ValueMember = "id_especialidad";
+            this.cbIDEspecialidad.DisplayMember = "DescEspecialidad";
+            this.cbIDEspecialidad.ValueMember = "IDEspecialidad";
         }
 
      public PlanDesktop(ModoForm modo): this()

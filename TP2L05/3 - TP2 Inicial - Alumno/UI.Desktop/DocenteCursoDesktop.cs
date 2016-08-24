@@ -15,6 +15,11 @@ namespace UI.Desktop
         public DocenteCursoDesktop()
         {
             InitializeComponent();
+
+            CursoLogic cl = new CursoLogic();
+            this.cbIDCurso.DataSource = cl.GetAll();
+            this.cbIDCurso.DisplayMember = "ID";
+            this.cbIDCurso.ValueMember = "ID";
         }
 
         public DocenteCursoDesktop(ModoForm modo): this()

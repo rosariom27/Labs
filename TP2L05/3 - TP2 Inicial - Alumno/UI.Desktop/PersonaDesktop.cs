@@ -21,9 +21,10 @@ namespace UI.Desktop
 
             PlanLogic PL = new PlanLogic();
             this.cbIDPlan.DataSource = PL.GetAll();
-            this.cbIDPlan.DisplayMember = "desc_plan";
-            this.cbIDPlan.ValueMember = "id_plan";
+            this.cbIDPlan.DisplayMember = "Descripcion";
+            this.cbIDPlan.ValueMember = "ID";
 
+            //PARA EL TIPO DE PERSONA HACER UN ENUM (Como nuevo, editar, etc) NO UNA CLASE
             TipoPersonaLogic TP = new TipoPersonaLogic();
             this.cbTipoPersona.DataSource = TP.GetAll();
             this.cbTipoPersona.DisplayMember = "_descripcion";

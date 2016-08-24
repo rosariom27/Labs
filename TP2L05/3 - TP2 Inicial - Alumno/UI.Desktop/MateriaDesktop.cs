@@ -15,6 +15,11 @@ namespace UI.Desktop
         public MateriaDesktop()
         {
             InitializeComponent();
+
+            PlanLogic pl = new PlanLogic();
+            this.cbIDPlan.DataSource = pl.GetAll();
+            this.cbIDPlan.DisplayMember = "ID";
+            this.cbIDPlan.ValueMember = "ID";
         }
 
         public MateriaDesktop(ModoForm modo): this()

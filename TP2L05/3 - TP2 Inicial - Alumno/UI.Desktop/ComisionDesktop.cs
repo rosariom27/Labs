@@ -16,6 +16,11 @@ namespace UI.Desktop
         public ComisionDesktop()
         {
             InitializeComponent();
+
+            PlanLogic pl = new PlanLogic();
+            this.cbIDPlan.DataSource = pl.GetAll();
+            this.cbIDPlan.DisplayMember = "ID";
+            this.cbIDPlan.ValueMember = "ID";
         }
         
         public ComisionDesktop(ModoForm modo): this()

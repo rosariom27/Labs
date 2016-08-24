@@ -18,8 +18,8 @@ namespace UI.Desktop
 
             CursoLogic cl = new CursoLogic();
             this.cbIDCurso.DataSource = cl.GetAll();
-            this.cbIDCurso.DisplayMember = "id";
-            this.cbIDCurso.ValueMember = "id";
+            this.cbIDCurso.DisplayMember = "ID"; //El que hereda curso
+            this.cbIDCurso.ValueMember = "ID";
         }
 
          public AlumnoInscripcionDesktop(ModoForm modo): this()
