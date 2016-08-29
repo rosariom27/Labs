@@ -25,6 +25,13 @@ namespace UI.Desktop
             Consulta
         }
 
+        public enum TipoPersona
+        {
+            Docente,
+            Administrativo,
+            Alumno
+        }
+
         private ModoForm _modo;
         public ModoForm Modo
         {

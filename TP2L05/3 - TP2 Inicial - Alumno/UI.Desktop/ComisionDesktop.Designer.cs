@@ -149,12 +149,14 @@
             // 
             // cbIDPlan
             // 
+            this.cbIDPlan.DisplayMember = "desc_plan";
             this.cbIDPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDPlan.FormattingEnabled = true;
             this.cbIDPlan.Location = new System.Drawing.Point(146, 40);
             this.cbIDPlan.Name = "cbIDPlan";
             this.cbIDPlan.Size = new System.Drawing.Size(100, 21);
             this.cbIDPlan.TabIndex = 10;
+            this.cbIDPlan.ValueMember = "id_plan";
             // 
             // ComisionDesktop
             // 

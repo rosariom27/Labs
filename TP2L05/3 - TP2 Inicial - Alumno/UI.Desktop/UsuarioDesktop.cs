@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using Negocio;
+using System.Text.RegularExpressions;
 using Entidades;
+using Negocio;
 
 namespace UI.Desktop
 {
@@ -17,10 +20,9 @@ namespace UI.Desktop
         {
             InitializeComponent();
 
-            TipoPersonaLogic TP = new TipoPersonaLogic();
-            this.cbTipoPersona.DataSource = TP.GetAll();
-            this.cbTipoPersona.DisplayMember = "ID";
-            this.cbTipoPersona.ValueMember = "TipoPersona";
+            this.cbTipoPersona.Items.Add("Docente");
+            this.cbTipoPersona.Items.Add("Administrativo");
+            this.cbTipoPersona.Items.Add("Alumno");
         }
 
         public UsuarioDesktop(ModoForm modo)

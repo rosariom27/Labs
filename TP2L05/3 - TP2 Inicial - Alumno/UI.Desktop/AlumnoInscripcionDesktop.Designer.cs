@@ -50,7 +50,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.07692F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.92308F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 249F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
@@ -104,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(279, 0);
+            this.label4.Location = new System.Drawing.Point(278, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 3;
@@ -113,7 +113,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(279, 36);
+            this.label5.Location = new System.Drawing.Point(278, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(54, 13);
             this.label5.TabIndex = 4;
@@ -124,26 +124,26 @@
             this.txtID.Location = new System.Drawing.Point(66, 3);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(207, 20);
+            this.txtID.Size = new System.Drawing.Size(206, 20);
             this.txtID.TabIndex = 5;
             // 
             // txtIDAlumno
             // 
             this.txtIDAlumno.Location = new System.Drawing.Point(66, 39);
             this.txtIDAlumno.Name = "txtIDAlumno";
-            this.txtIDAlumno.Size = new System.Drawing.Size(207, 20);
+            this.txtIDAlumno.Size = new System.Drawing.Size(206, 20);
             this.txtIDAlumno.TabIndex = 6;
             // 
             // txtNota
             // 
-            this.txtNota.Location = new System.Drawing.Point(349, 3);
+            this.txtNota.Location = new System.Drawing.Point(348, 3);
             this.txtNota.Name = "txtNota";
             this.txtNota.Size = new System.Drawing.Size(219, 20);
             this.txtNota.TabIndex = 8;
             // 
             // txtCondicion
             // 
-            this.txtCondicion.Location = new System.Drawing.Point(349, 39);
+            this.txtCondicion.Location = new System.Drawing.Point(348, 39);
             this.txtCondicion.Name = "txtCondicion";
             this.txtCondicion.Size = new System.Drawing.Size(219, 20);
             this.txtCondicion.TabIndex = 9;
@@ -151,7 +151,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAceptar.Location = new System.Drawing.Point(279, 122);
+            this.btnAceptar.Location = new System.Drawing.Point(278, 122);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(64, 57);
             this.btnAceptar.TabIndex = 10;
@@ -172,12 +172,12 @@
             // 
             // cbIDCurso
             // 
-            this.cbIDCurso.DisplayMember = "id_curso";
+            this.cbIDCurso.DisplayMember = "descripcion";
             this.cbIDCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDCurso.FormattingEnabled = true;
             this.cbIDCurso.Location = new System.Drawing.Point(66, 78);
             this.cbIDCurso.Name = "cbIDCurso";
-            this.cbIDCurso.Size = new System.Drawing.Size(207, 21);
+            this.cbIDCurso.Size = new System.Drawing.Size(206, 21);
             this.cbIDCurso.TabIndex = 2;
             this.cbIDCurso.Tag = "IDCurso";
             this.cbIDCurso.ValueMember = "id_curso";

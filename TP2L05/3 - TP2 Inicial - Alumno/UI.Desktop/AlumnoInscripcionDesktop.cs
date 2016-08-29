@@ -18,7 +18,7 @@ namespace UI.Desktop
 
             CursoLogic cl = new CursoLogic();
             this.cbIDCurso.DataSource = cl.GetAll();
-            this.cbIDCurso.DisplayMember = "ID"; //El que hereda curso
+            this.cbIDCurso.DisplayMember = "Descripcion";
             this.cbIDCurso.ValueMember = "ID";
         }
 

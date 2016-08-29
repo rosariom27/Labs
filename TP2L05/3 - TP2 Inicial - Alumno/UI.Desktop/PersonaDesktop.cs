@@ -23,15 +23,11 @@ namespace UI.Desktop
             this.cbIDPlan.DataSource = PL.GetAll();
             this.cbIDPlan.DisplayMember = "Descripcion";
             this.cbIDPlan.ValueMember = "ID";
-
-            //PARA EL TIPO DE PERSONA HACER UN ENUM (Como nuevo, editar, etc) NO UNA CLASE
-            TipoPersonaLogic TP = new TipoPersonaLogic();
-            this.cbTipoPersona.DataSource = TP.GetAll();
-            this.cbTipoPersona.DisplayMember = "_descripcion";
-            this.cbTipoPersona.ValueMember = "_ID";
-            /*this.cbTipoPersona.Items.Add("Docente");
-            this.cbTipoPersona.Items.Add("No docente");
-            this.cbTipoPersona.Items.Add("Alumno");*/
+                   
+            
+            this.cbTipoPersona.Items.Add("Docente");
+            this.cbTipoPersona.Items.Add("Administrativo");
+            this.cbTipoPersona.Items.Add("Alumno");
         }
 
         private Persona _personaActual;

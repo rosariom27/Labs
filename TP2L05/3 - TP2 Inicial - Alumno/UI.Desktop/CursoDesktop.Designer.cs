@@ -50,7 +50,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.83972F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.16028F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
@@ -104,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(263, 0);
+            this.label4.Location = new System.Drawing.Point(262, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 3;
@@ -113,7 +113,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(263, 64);
+            this.label5.Location = new System.Drawing.Point(262, 64);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 4;
@@ -129,14 +129,14 @@
             // 
             // txtAnioCalendario
             // 
-            this.txtAnioCalendario.Location = new System.Drawing.Point(440, 3);
+            this.txtAnioCalendario.Location = new System.Drawing.Point(439, 3);
             this.txtAnioCalendario.Name = "txtAnioCalendario";
             this.txtAnioCalendario.Size = new System.Drawing.Size(100, 20);
             this.txtAnioCalendario.TabIndex = 8;
             // 
             // txtCupo
             // 
-            this.txtCupo.Location = new System.Drawing.Point(440, 67);
+            this.txtCupo.Location = new System.Drawing.Point(439, 67);
             this.txtCupo.Name = "txtCupo";
             this.txtCupo.Size = new System.Drawing.Size(100, 20);
             this.txtCupo.TabIndex = 9;
@@ -144,7 +144,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAceptar.Location = new System.Drawing.Point(359, 180);
+            this.btnAceptar.Location = new System.Drawing.Point(358, 180);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 54);
             this.btnAceptar.TabIndex = 10;
@@ -165,21 +165,25 @@
             // 
             // cbIDMateria
             // 
+            this.cbIDMateria.DisplayMember = "desc_materia";
             this.cbIDMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDMateria.FormattingEnabled = true;
             this.cbIDMateria.Location = new System.Drawing.Point(153, 67);
             this.cbIDMateria.Name = "cbIDMateria";
             this.cbIDMateria.Size = new System.Drawing.Size(100, 21);
             this.cbIDMateria.TabIndex = 12;
+            this.cbIDMateria.ValueMember = "id_materia";
             // 
             // cbIDComision
             // 
+            this.cbIDComision.DisplayMember = "desc_comision";
             this.cbIDComision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDComision.FormattingEnabled = true;
             this.cbIDComision.Location = new System.Drawing.Point(153, 128);
             this.cbIDComision.Name = "cbIDComision";
             this.cbIDComision.Size = new System.Drawing.Size(100, 21);
             this.cbIDComision.TabIndex = 13;
+            this.cbIDComision.ValueMember = "id_comision";
             // 
             // CursoDesktop
             // 

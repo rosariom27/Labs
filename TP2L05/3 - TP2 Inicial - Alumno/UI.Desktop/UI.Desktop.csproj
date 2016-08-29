@@ -158,18 +158,6 @@
     <Compile Include="Planes.Designer.cs">
       <DependentUpon>Planes.cs</DependentUpon>
     </Compile>
-    <Compile Include="TipoPersonaDesktop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TipoPersonaDesktop.Designer.cs">
-      <DependentUpon>TipoPersonaDesktop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TipoPersonas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TipoPersonas.Designer.cs">
-      <DependentUpon>TipoPersonas.cs</DependentUpon>
-    </Compile>
     <Compile Include="UsuarioDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,12 +225,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Planes.resx">
       <DependentUpon>Planes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TipoPersonaDesktop.resx">
-      <DependentUpon>TipoPersonaDesktop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TipoPersonas.resx">
-      <DependentUpon>TipoPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuarioDesktop.resx">
       <DependentUpon>UsuarioDesktop.cs</DependentUpon>

@@ -18,12 +18,12 @@ namespace UI.Desktop
 
             MateriaLogic ml = new MateriaLogic();
             this.cbIDMateria.DataSource = ml.GetAll();
-            this.cbIDMateria.DisplayMember = "ID";
+            this.cbIDMateria.DisplayMember = "Descripcion";
             this.cbIDMateria.ValueMember = "ID";
 
             ComisionLogic cl = new ComisionLogic();
             this.cbIDComision.DataSource = cl.GetAll();
-            this.cbIDComision.DisplayMember = " ID";
+            this.cbIDComision.DisplayMember = " Descripcion";
             this.cbIDComision.ValueMember = "ID";
         }
 

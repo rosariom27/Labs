@@ -18,7 +18,7 @@ namespace UI.Desktop
 
             PlanLogic pl = new PlanLogic();
             this.cbIDPlan.DataSource = pl.GetAll();
-            this.cbIDPlan.DisplayMember = "ID";
+            this.cbIDPlan.DisplayMember = "Descripcion";
             this.cbIDPlan.ValueMember = "ID";
         }
 

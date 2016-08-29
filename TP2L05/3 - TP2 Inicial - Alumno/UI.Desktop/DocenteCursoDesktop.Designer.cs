@@ -48,7 +48,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.0339F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.9661F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
@@ -90,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(237, 0);
+            this.label3.Location = new System.Drawing.Point(236, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 2;
@@ -99,7 +99,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(237, 65);
+            this.label4.Location = new System.Drawing.Point(236, 65);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
             this.label4.TabIndex = 3;
@@ -110,19 +110,19 @@
             this.txtID.Location = new System.Drawing.Point(113, 3);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(118, 20);
+            this.txtID.Size = new System.Drawing.Size(117, 20);
             this.txtID.TabIndex = 4;
             // 
             // txtIDDocente
             // 
-            this.txtIDDocente.Location = new System.Drawing.Point(371, 3);
+            this.txtIDDocente.Location = new System.Drawing.Point(370, 3);
             this.txtIDDocente.Name = "txtIDDocente";
             this.txtIDDocente.Size = new System.Drawing.Size(169, 20);
             this.txtIDDocente.TabIndex = 6;
             // 
             // txtCargo
             // 
-            this.txtCargo.Location = new System.Drawing.Point(371, 68);
+            this.txtCargo.Location = new System.Drawing.Point(370, 68);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(169, 20);
             this.txtCargo.TabIndex = 7;
@@ -130,7 +130,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAceptar.Location = new System.Drawing.Point(290, 133);
+            this.btnAceptar.Location = new System.Drawing.Point(289, 133);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 51);
             this.btnAceptar.TabIndex = 8;
@@ -151,12 +151,14 @@
             // 
             // cbIDCurso
             // 
+            this.cbIDCurso.DisplayMember = "id_curso";
             this.cbIDCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDCurso.FormattingEnabled = true;
             this.cbIDCurso.Location = new System.Drawing.Point(113, 68);
             this.cbIDCurso.Name = "cbIDCurso";
-            this.cbIDCurso.Size = new System.Drawing.Size(118, 21);
+            this.cbIDCurso.Size = new System.Drawing.Size(117, 21);
             this.cbIDCurso.TabIndex = 10;
+            this.cbIDCurso.ValueMember = "id_curso";
             // 
             // DocenteCursoDesktop
             // 
