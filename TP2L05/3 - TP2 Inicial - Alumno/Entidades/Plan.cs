@@ -11,6 +11,7 @@ namespace Entidades
         private Especialidad _Especialidad;
         private string _Descripcion;
         private int _IDEspecialidad;
+       
         public Especialidad Especialidad
         {
             get { return _Especialidad; }
@@ -25,12 +26,14 @@ namespace Entidades
 
         public int IDEspecialidad
         {
-            get { return _Especialidad.ID; }
+            get { return _IDEspecialidad; }
+            set { _IDEspecialidad = value; }
         }
+        
         public Plan()
         {
         this.Especialidad = new Especialidad();
-        }
+        } 
 
         public string DescEspecialidad
         {

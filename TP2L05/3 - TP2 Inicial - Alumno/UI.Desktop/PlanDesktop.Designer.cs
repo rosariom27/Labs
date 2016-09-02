@@ -138,6 +138,7 @@
             this.cbIDEspecialidad.Name = "cbIDEspecialidad";
             this.cbIDEspecialidad.Size = new System.Drawing.Size(176, 21);
             this.cbIDEspecialidad.TabIndex = 8;
+            this.cbIDEspecialidad.Tag = "IDEspecialidad";
             this.cbIDEspecialidad.ValueMember = "id_especialidad";
             // 
             // PlanDesktop
