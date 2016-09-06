@@ -14,6 +14,10 @@ namespace UI.Desktop
 {
     public partial class Comisiones : Form
     {
+        public Comisiones()
+        {
+            InitializeComponent();
+        }
         public Comisiones(Usuario usr)
         {
             InitializeComponent();
@@ -79,7 +83,7 @@ namespace UI.Desktop
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-            int id = ((Entidades.Plan)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
+            int id = ((Entidades.Comisión)this.dgvComisiones.SelectedRows[0].DataBoundItem).ID;
             ComisionDesktop formComision = new ComisionDesktop(id, ApplicationForm.ModoForm.Modificacion);
             formComision.ShowDialog();
             this.Listar();

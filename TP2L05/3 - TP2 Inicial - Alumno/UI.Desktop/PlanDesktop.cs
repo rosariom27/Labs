@@ -7,13 +7,12 @@ using System.Text;
 using System.Windows.Forms;
 using Negocio;
 using Entidades;
-using System.Text.RegularExpressions;
 
 namespace UI.Desktop
 {
     public partial class PlanDesktop : UI.Desktop.ApplicationForm
     {
-        public PlanDesktop()
+     public PlanDesktop()
         {
             InitializeComponent();
 
@@ -21,13 +20,12 @@ namespace UI.Desktop
             this.cbIDEspecialidad.DataSource = ES.GetAll();
             this.cbIDEspecialidad.DisplayMember = "Descripcion";
             this.cbIDEspecialidad.ValueMember = "ID";
+            //this.cbIDEspecialidad.SelectedIndex = -1;
         }
-
      public PlanDesktop(ModoForm modo): this()
         {
             Modo = modo;            
         }
-
      public PlanDesktop(int ID, ModoForm modo) : this()
         {
             Modo = modo;
@@ -42,14 +40,26 @@ namespace UI.Desktop
             get { return _planActual; }
             set { _planActual = value; }
         }
-
-     public virtual void MapearDeDatos() 
+     public override void MapearDeDatos() 
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
-            this.cbIDEspecialidad.Text = this.PlanActual.IDEspecialidad.ToString();
+            this.cbIDEspecialidad.SelectedValue = this.PlanActual.Especialidad.ID;
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
+
+            switch (this.Modo)
+            {
+                case ModoForm.Baja:
+                    this.btnAceptar.Text = "Eliminar";
+                    break;
+                case ModoForm.Consulta:
+                    this.btnAceptar.Text = "Aceptar";
+                    break;
+                default:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+            }
             
-            if ( Modo == ModoForm.Alta ^ Modo == ModoForm.Modificacion)
+            /*if ( Modo == ModoForm.Alta ^ Modo == ModoForm.Modificacion)
             { 
                 this.btnAceptar.Text = "Guardar";
             }
@@ -60,20 +70,45 @@ namespace UI.Desktop
                                         else {  
                                                 this.btnAceptar.Text = "Aceptar"; 
                                              }
-                        }      
+                        }      */
             
         }
-     public virtual void MapearADatos()
+     public override void MapearADatos()
         {
-
-            if (Modo == ModoForm.Alta)
+            switch (this.Modo)
+            {
+                case ModoForm.Baja:
+                    PlanActual.State = Plan.States.Deleted;
+                    break;
+                case ModoForm.Consulta:
+                    PlanActual.State = Plan.States.Unmodified;
+                    break;
+                case ModoForm.Alta:
+                    PlanActual = new Plan();
+                    PlanActual.State = Plan.States.New;
+                    break;
+                case ModoForm.Modificacion:
+                    PlanActual.State = Plan.States.Modified;
+                    break;
+            }
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+            {
+                if (Modo == ModoForm.Modificacion)
+                    PlanActual.ID = Convert.ToInt32(this.txtID.Text);
+                PlanActual.Descripcion = this.txtDescripcion.Text;
+                PlanActual.Especialidad.ID = Convert.ToInt32(this.cbIDEspecialidad.SelectedValue);
+            }
+            
+         
+         
+         /*if (Modo == ModoForm.Alta)
             {
                 Plan p = new Plan();
                 this.PlanActual = p;
                 
                 this.PlanActual.State = Entidad.States.New;
                 this.PlanActual.Descripcion= this.txtDescripcion.Text;
-                              
+                this.PlanActual.Especialidad.ID = Convert.ToInt32(this.cbIDEspecialidad.SelectedValue);                              
             }
             else
             {
@@ -82,18 +117,18 @@ namespace UI.Desktop
                     this.PlanActual.State = Entidad.States.Modified;
 
                     this.PlanActual.Descripcion= this.txtDescripcion.Text;
-                    
+                    this.PlanActual.Especialidad.ID = Convert.ToInt32(this.cbIDEspecialidad.SelectedValue);    
+                                      
                 }
-            }
+            }*/
         }
-
-     public virtual void GuardarCambios() 
+     public override void GuardarCambios() 
         {
             this.MapearADatos();
             PlanLogic pl = new PlanLogic();
             pl.Save(PlanActual);
         }
-     public virtual bool Validar()
+     public override bool Validar()
      {               
                     if ( (string.IsNullOrEmpty(this.txtDescripcion.Text)) )
                 {
@@ -117,8 +152,7 @@ namespace UI.Desktop
                 this.GuardarCambios();
                 this.Close();
             }
-            //TERMINAR CON EL IF
-        }
+         }
      private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();

@@ -26,8 +26,7 @@ namespace Data.Database
                 {
                     Plan pl = new Plan();
                     pl.ID = (int)drPlanes["id_plan"];
-                    pl.IDEspecialidad = (int)drPlanes["id_especialidad"];
-                    //pl.Especialidad.ID = (int)drPlanes["id_especialidad"];
+                    pl.Especialidad.ID = (int)drPlanes["id_especialidad"];
                     pl.Descripcion = (string)drPlanes["desc_plan"];
              
                     planes.Add(pl);
@@ -135,8 +134,8 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("UPDATE planes SET desc_plan=@desc_plan, id_especialidad=@id_especialidad," +
-                    "WHERE id_plan=@id", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("UPDATE planes SET desc_plan=@desc_plan, id_especialidad=@id_especialidad " +
+                    " WHERE id_plan=@id ", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 

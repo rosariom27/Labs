@@ -36,9 +36,9 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtAnioEspecialidad = new System.Windows.Forms.TextBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbIDPlan = new System.Windows.Forms.ComboBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,9 +54,9 @@
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtAnioEspecialidad, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.cbIDPlan, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -127,16 +127,6 @@
             this.txtAnioEspecialidad.Size = new System.Drawing.Size(100, 20);
             this.txtAnioEspecialidad.TabIndex = 7;
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(3, 169);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 8;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(146, 169);
@@ -149,14 +139,23 @@
             // 
             // cbIDPlan
             // 
-            this.cbIDPlan.DisplayMember = "desc_plan";
             this.cbIDPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDPlan.FormattingEnabled = true;
             this.cbIDPlan.Location = new System.Drawing.Point(146, 40);
             this.cbIDPlan.Name = "cbIDPlan";
             this.cbIDPlan.Size = new System.Drawing.Size(100, 21);
             this.cbIDPlan.TabIndex = 10;
-            this.cbIDPlan.ValueMember = "id_plan";
+            this.cbIDPlan.Tag = "IDPlan";
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(3, 169);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 11;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // ComisionDesktop
             // 
@@ -180,8 +179,8 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtAnioEspecialidad;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbIDPlan;
+        private System.Windows.Forms.Button btnAceptar;
     }
 }

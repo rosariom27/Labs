@@ -164,7 +164,7 @@ namespace Data.Database
                 SqlCommand cmdSave = new SqlCommand("insert into especialidades (desc_especialidad) " +
                 "values(@desc_especialidad)" + "select @@identity", sqlConn);
 
-                //cmdSave.CommandType = CommandType.Text;
+                cmdSave.CommandType = CommandType.Text;
 
                 cmdSave.Parameters.Add("@desc_especialidad", SqlDbType.VarChar, 50).Value = especialidad.Descripcion;
                 especialidad.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());

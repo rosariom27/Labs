@@ -32,12 +32,12 @@ namespace UI.Desktop
             get { return _usuarioActual; }
         }
 
-        private Plan _planActual;
+        private Plan _planActual;  //creo que no lo estoy usando para nada
         public Plan PlanActual
         {
             get { return _planActual; }
             set { _planActual = value; }
-        }
+        } //creo que no lo estoy usando para nada
 
         public void Listar()
         {
@@ -92,15 +92,6 @@ namespace UI.Desktop
             PlanDesktop formPlan = new PlanDesktop(id, ApplicationForm.ModoForm.Baja);
             formPlan.ShowDialog();
             this.Listar();
-
-            /*
-            int id = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-            this.Notificar("Advertencia", "¿Desea eliminar este usuario?", MessageBoxButtons.OK, MessageBoxIcon.Question);
-            //¿CÓMO ELIMINO
-            UsuarioLogic usu = new UsuarioLogic();
-            usu.Delete(id);
-            this.Listar();*/
-
         }
 
         private void Planes_Load(object sender, EventArgs e)

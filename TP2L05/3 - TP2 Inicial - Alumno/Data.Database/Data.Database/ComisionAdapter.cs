@@ -135,15 +135,15 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdSave = new SqlCommand("UPDATE comisiones SET desc_comision=@desc_comision, anio_especialidad=@anio_especialidad," +
-                    "id_plan=@id_plan" +
+                    " id_plan=@id_plan " +
                     "WHERE id_comision=@id", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = comision.ID;
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.Descripcion;
-                cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.VarChar, 50).Value = comision.AnioEspecialidad;
-                cmdSave.Parameters.Add("@id_plan", SqlDbType.Bit).Value = comision.Plan.ID;
+                cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
+                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.Plan.ID;
                
                 cmdSave.ExecuteNonQuery();
 
@@ -173,8 +173,9 @@ namespace Data.Database
                 cmdSave.CommandType = CommandType.Text;
 
                 cmdSave.Parameters.Add("@desc_comision", SqlDbType.VarChar, 50).Value = comision.Descripcion;
-                cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.VarChar, 50).Value = comision.AnioEspecialidad;
-                cmdSave.Parameters.Add("@id_plan", SqlDbType.Bit).Value = comision.Plan.ID;
+                cmdSave.Parameters.Add("@anio_especialidad", SqlDbType.Int).Value = comision.AnioEspecialidad;
+                cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = comision.Plan.ID;
+                
                 comision.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
 

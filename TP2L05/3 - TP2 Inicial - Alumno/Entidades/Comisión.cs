@@ -11,6 +11,7 @@ namespace Entidades
         private int _AnioEspecialidad;
         private string _Descripcion;
         private Plan _Plan;
+        private int _IDPlan;
 
         public int AnioEspecialidad
         {
@@ -28,6 +29,20 @@ namespace Entidades
         {
             get { return _Plan; }
             set { _Plan = value; }
+        }
+        public int IDPlan
+        {
+            get { return _IDPlan; }
+            set { _IDPlan = value; }
+        }
+        public string DescPlan
+        {
+            get { return Plan.Descripcion; }
+        }
+
+        public Comisión()
+        {
+            this.Plan = new Plan();
         }
     }
 }
