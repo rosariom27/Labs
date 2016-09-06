@@ -50,7 +50,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.91887F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.08113F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 157F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 186F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
@@ -104,7 +104,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(263, 0);
+            this.label4.Location = new System.Drawing.Point(262, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 3;
@@ -113,7 +113,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(263, 69);
+            this.label5.Location = new System.Drawing.Point(262, 69);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 13);
             this.label5.TabIndex = 4;
@@ -122,7 +122,7 @@
             // btnAceptar
             // 
             this.btnAceptar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAceptar.Location = new System.Drawing.Point(339, 210);
+            this.btnAceptar.Location = new System.Drawing.Point(338, 210);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 64);
             this.btnAceptar.TabIndex = 5;
@@ -158,28 +158,26 @@
             // 
             // txtHSSemanales
             // 
-            this.txtHSSemanales.Location = new System.Drawing.Point(420, 3);
+            this.txtHSSemanales.Location = new System.Drawing.Point(419, 3);
             this.txtHSSemanales.Name = "txtHSSemanales";
             this.txtHSSemanales.Size = new System.Drawing.Size(100, 20);
             this.txtHSSemanales.TabIndex = 10;
             // 
             // txtHSTotales
             // 
-            this.txtHSTotales.Location = new System.Drawing.Point(420, 72);
+            this.txtHSTotales.Location = new System.Drawing.Point(419, 72);
             this.txtHSTotales.Name = "txtHSTotales";
             this.txtHSTotales.Size = new System.Drawing.Size(100, 20);
             this.txtHSTotales.TabIndex = 11;
             // 
             // cbIDPlan
             // 
-            this.cbIDPlan.DisplayMember = "desc_plan";
             this.cbIDPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDPlan.FormattingEnabled = true;
             this.cbIDPlan.Location = new System.Drawing.Point(101, 72);
             this.cbIDPlan.Name = "cbIDPlan";
             this.cbIDPlan.Size = new System.Drawing.Size(100, 21);
             this.cbIDPlan.TabIndex = 12;
-            this.cbIDPlan.ValueMember = "id_plan";
             // 
             // MateriaDesktop
             // 

@@ -30,25 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cursos));
             this.tcCursos = new System.Windows.Forms.ToolStripContainer();
-            this.tsCursos = new System.Windows.Forms.ToolStrip();
-            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
-            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
-            this.tsEliminar = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnActulizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDMateria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDComision = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AnioCalendario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsCursos = new System.Windows.Forms.ToolStrip();
+            this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
+            this.tsbEditar = new System.Windows.Forms.ToolStripButton();
+            this.tsEliminar = new System.Windows.Forms.ToolStripButton();
             this.tcCursos.ContentPanel.SuspendLayout();
             this.tcCursos.TopToolStripPanel.SuspendLayout();
             this.tcCursos.SuspendLayout();
-            this.tsCursos.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
+            this.tsCursos.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcCursos
@@ -68,48 +63,6 @@
             // tcCursos.TopToolStripPanel
             // 
             this.tcCursos.TopToolStripPanel.Controls.Add(this.tsCursos);
-            // 
-            // tsCursos
-            // 
-            this.tsCursos.Dock = System.Windows.Forms.DockStyle.None;
-            this.tsCursos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbNuevo,
-            this.tsbEditar,
-            this.tsEliminar});
-            this.tsCursos.Location = new System.Drawing.Point(3, 0);
-            this.tsCursos.Name = "tsCursos";
-            this.tsCursos.Size = new System.Drawing.Size(81, 25);
-            this.tsCursos.TabIndex = 0;
-            // 
-            // tsbNuevo
-            // 
-            this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
-            this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
-            this.tsbNuevo.Text = "toolStripButton1";
-            this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
-            // 
-            // tsbEditar
-            // 
-            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
-            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
-            this.tsbEditar.Text = "toolStripButton2";
-            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
-            // 
-            // tsEliminar
-            // 
-            this.tsEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsEliminar.Image")));
-            this.tsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsEliminar.Name = "tsEliminar";
-            this.tsEliminar.Size = new System.Drawing.Size(23, 22);
-            this.tsEliminar.Text = "toolStripButton3";
-            this.tsEliminar.Click += new System.EventHandler(this.tsEliminar_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -153,12 +106,6 @@
             // dgvCursos
             // 
             this.dgvCursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCursos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.IDMateria,
-            this.IDComision,
-            this.AnioCalendario,
-            this.Cupo});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvCursos, 2);
             this.dgvCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCursos.Location = new System.Drawing.Point(3, 3);
@@ -166,33 +113,47 @@
             this.dgvCursos.Size = new System.Drawing.Size(623, 272);
             this.dgvCursos.TabIndex = 2;
             // 
-            // ID
+            // tsCursos
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
+            this.tsCursos.Dock = System.Windows.Forms.DockStyle.None;
+            this.tsCursos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbNuevo,
+            this.tsbEditar,
+            this.tsEliminar});
+            this.tsCursos.Location = new System.Drawing.Point(3, 0);
+            this.tsCursos.Name = "tsCursos";
+            this.tsCursos.Size = new System.Drawing.Size(81, 25);
+            this.tsCursos.TabIndex = 0;
             // 
-            // IDMateria
+            // tsbNuevo
             // 
-            this.IDMateria.HeaderText = "ID Materia";
-            this.IDMateria.Name = "IDMateria";
-            this.IDMateria.ReadOnly = true;
+            this.tsbNuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tsbNuevo.Image")));
+            this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbNuevo.Name = "tsbNuevo";
+            this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
+            this.tsbNuevo.Text = "toolStripButton1";
+            this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
-            // IDComision
+            // tsbEditar
             // 
-            this.IDComision.HeaderText = "ID Comisión";
-            this.IDComision.Name = "IDComision";
-            this.IDComision.ReadOnly = true;
+            this.tsbEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tsbEditar.Image")));
+            this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEditar.Name = "tsbEditar";
+            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
+            this.tsbEditar.Text = "toolStripButton2";
+            this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
-            // AnioCalendario
+            // tsEliminar
             // 
-            this.AnioCalendario.HeaderText = "Año Calendario";
-            this.AnioCalendario.Name = "AnioCalendario";
-            // 
-            // Cupo
-            // 
-            this.Cupo.HeaderText = "Cupo";
-            this.Cupo.Name = "Cupo";
+            this.tsEliminar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsEliminar.Image = ((System.Drawing.Image)(resources.GetObject("tsEliminar.Image")));
+            this.tsEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsEliminar.Name = "tsEliminar";
+            this.tsEliminar.Size = new System.Drawing.Size(23, 22);
+            this.tsEliminar.Text = "toolStripButton3";
+            this.tsEliminar.Click += new System.EventHandler(this.tsEliminar_Click);
             // 
             // Cursos
             // 
@@ -208,10 +169,10 @@
             this.tcCursos.TopToolStripPanel.PerformLayout();
             this.tcCursos.ResumeLayout(false);
             this.tcCursos.PerformLayout();
-            this.tsCursos.ResumeLayout(false);
-            this.tsCursos.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).EndInit();
+            this.tsCursos.ResumeLayout(false);
+            this.tsCursos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -227,10 +188,5 @@
         private System.Windows.Forms.Button btnActulizar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.DataGridView dgvCursos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDMateria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDComision;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AnioCalendario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cupo;
     }
 }

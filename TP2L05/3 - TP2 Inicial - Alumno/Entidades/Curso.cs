@@ -10,7 +10,7 @@ namespace Entidades
     {
         private int _AnioCalendario;
         private int _Cupo;
-        private string _Descripcion;
+        //private string _Descripcion;
         private Comisión _Comision;
         private Materia _Materia;
 
@@ -26,11 +26,11 @@ namespace Entidades
             set { _Cupo = value; }
         }
 
-        public string Descripcion
+        /*public string Descripcion
         {
             get { return _Descripcion; }
             set { _Descripcion = value; }
-        }
+        }*/
 
         public Curso()
         {
@@ -43,20 +43,20 @@ namespace Entidades
             get { return _Comision.ID; }
         }
 
-        public string DescComision
+        /*public string DescComision
         {
             get { return _Comision.Descripcion; }
-        }
+        }*/
 
         public int IDMateria
         {
             get { return _Materia.ID; }
         }
 
-        public string DescMateria
+        /*public string DescMateria
         {
             get { return _Materia.Descripcion; }
-        }
+        }*/
 
         public Comisión Comision
         {

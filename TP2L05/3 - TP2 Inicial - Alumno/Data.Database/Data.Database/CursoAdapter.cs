@@ -134,7 +134,7 @@ namespace Data.Database
 
                 SqlCommand cmdSave = new SqlCommand("UPDATE cursos SET id_materia=@id_materia, id_comision=@id_comision," +
                     "anio_calendario=@anio_calendario, cupo=@cupo " +
-                    "WHERE id_curso=@id", sqlConn);
+                    " WHERE id_curso=@id ", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 

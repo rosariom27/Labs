@@ -31,10 +31,10 @@ namespace Entidades
             get { return _Curso.ID; }
         }
 
-        public string DescCurso
+        /*public string DescCurso
         {
             get { return _Curso.Descripcion; }
-        }
+        }*/
   
         public Persona Persona
         {
@@ -69,7 +69,7 @@ namespace Entidades
             get { return Persona.Nombre; }
         }
 
-        public string DescComision
+        /*public string DescComision
         {
             get { return _Curso.DescComision; }
         }
@@ -77,7 +77,7 @@ namespace Entidades
         public string DescMateria
         {
             get { return _Curso.DescMateria; }
-        }
+        }*/
 
         public int AnioCurso
         {

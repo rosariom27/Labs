@@ -138,12 +138,12 @@ namespace Data.Database
 
                 SqlCommand cmdSave = new SqlCommand("UPDATE materias SET desc_materia=@desc_materia, hs_semanales=@hs_semanales," +
                     "hs_totales=@hs_totales, id_plan=@id_plan " +
-                    "WHERE id_materia=@id", sqlConn);
+                    " WHERE id_materia=@id ", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 
                 cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = materia.ID;
-                cmdSave.Parameters.Add("@desc_maeteria", SqlDbType.VarChar, 50).Value = materia.Descripcion;
+                cmdSave.Parameters.Add("@desc_materia", SqlDbType.VarChar, 50).Value = materia.Descripcion;
                 cmdSave.Parameters.Add("@hs_semanales", SqlDbType.Int).Value = materia.HSSemanales;
                 cmdSave.Parameters.Add("@hs_totales", SqlDbType.Int).Value = materia.HSTotales;
                 cmdSave.Parameters.Add("@id_plan", SqlDbType.Int).Value = materia.Plan.ID;

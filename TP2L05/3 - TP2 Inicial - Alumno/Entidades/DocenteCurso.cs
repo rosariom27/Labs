@@ -35,10 +35,10 @@ namespace Entidades
             get {return _Curso.ID;}
         }
 
-        public string DescCurso
+        /*public string DescCurso
         {
             get {return _Curso.Descripcion;}
-        }
+        }*/
 
         public int IDPersona
         {
