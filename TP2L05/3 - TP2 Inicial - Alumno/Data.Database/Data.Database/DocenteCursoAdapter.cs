@@ -11,10 +11,8 @@ namespace Data.Database
     {
         public List<DocenteCurso> GetAll()
         {
-
             try
             {
-
                 this.OpenConnection();
                 List<DocenteCurso> docursos = new List<DocenteCurso>();
                 SqlCommand cmdDocentesCursos = new SqlCommand("select * from docentes_cursos", sqlConn);
@@ -27,22 +25,18 @@ namespace Data.Database
                     dc.ID = (int)drDocentesCursos["id_dictado"];
                     dc.Curso.ID = (int)drDocentesCursos["id_curso"];
                     dc.Persona.ID = (int)drDocentesCursos["id_docente"];
-                    dc.Cargo = (int)drDocentesCursos["cargo"];
 
                     docursos.Add(dc);
-
                 }
                 return docursos;
                 drDocentesCursos.Close();
                 this.CloseConnection();
             }
-
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar listas de dictado", Ex);
                 throw ExcepcionManejada;
             }
-
         }
 
         public DocenteCurso GetOne(int ID)
@@ -62,7 +56,6 @@ namespace Data.Database
                     dc.ID = (int)drDocentesCursos["id_dictado"];
                     dc.Curso.ID = (int)drDocentesCursos["id_curso"];
                     dc.Persona.ID = (int)drDocentesCursos["id_docente"];
-                    dc.Cargo = (int)drDocentesCursos["cargo"];
                 }
 
                 drDocentesCursos.Close();
@@ -132,18 +125,15 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdSave = new SqlCommand("UPDATE docentes_cursos SET id_curso=@id_curso, id_docente=@id_docente," +
-                    "cargo=@cargo " +
-                    "WHERE id_dictado=@id", sqlConn);
+                "WHERE id_dictado=@id", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 
                 cmdSave.Parameters.Add("@id_dictado", SqlDbType.Int).Value = dc.ID;
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = dc.Curso.ID;
                 cmdSave.Parameters.Add("@id_docente", SqlDbType.VarChar, 50).Value = dc.Persona.ID;
-                cmdSave.Parameters.Add("@cargo", SqlDbType.Bit).Value = dc.Cargo;
 
                 cmdSave.ExecuteNonQuery();
-
             }
 
             catch (Exception Ex)
@@ -164,14 +154,14 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("insert into docentes_cursos (id_curso, id_docente, cargo) " +
-                "values(@id_curso, @id_docente, @cargo)" + "select @@identity", sqlConn);
+                SqlCommand cmdSave = new SqlCommand(" insert into docentes_cursos (id_curso, id_docente) " +
+                " values(@id_curso, @id_docente) " + " select @@identity ", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 
                 cmdSave.Parameters.Add("@id_curso", SqlDbType.Int).Value = dc.Curso.ID;
                 cmdSave.Parameters.Add("@id_docente", SqlDbType.Int).Value = dc.Persona.ID;
-                cmdSave.Parameters.Add("@cargo", SqlDbType.Int).Value = dc.Cargo;
+                
                 dc.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
 

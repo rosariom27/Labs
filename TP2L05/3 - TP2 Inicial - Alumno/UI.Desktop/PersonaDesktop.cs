@@ -50,7 +50,7 @@ namespace UI.Desktop
             MapearDeDatos();
         }
 
-        public virtual void MapearDeDatos()
+        public override void MapearDeDatos()
         {
             this.txtID.Text = this.PersonaActual.ID.ToString();
             this.txtApellido.Text = this.PersonaActual.Apellido;
@@ -63,69 +63,52 @@ namespace UI.Desktop
             this.cbIDPlan.Text = this.PersonaActual.Plan.ID.ToString();
             this.mtbFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToString();
 
-            switch (Modo)
+            switch (this.Modo)
             {
-
-                case ModoForm.Alta:
-                    {
-                        this.btnAceptar.Text = "Guardar";
-                        this.PersonaActual.State = Entidad.States.New;
-                    }
-                    break;
-                case ModoForm.Modificacion:
-                    {
-                        this.btnAceptar.Text = "Guardar";
-                        this.PersonaActual.State = Entidad.States.Modified;
-                    }
-                    break;
                 case ModoForm.Baja:
-                    {
-                        this.btnAceptar.Text = "Eliminar";
-                        this.PersonaActual.State = Entidad.States.Deleted;
-                    }
+                    this.btnAceptar.Text = "Eliminar";
                     break;
                 case ModoForm.Consulta:
-                    {
-                        this.btnAceptar.Text = "Aceptar";
-                        this.PersonaActual.State = Entidad.States.Unmodified;
-                    }
+                    this.btnAceptar.Text = "Aceptar";
                     break;
                 default:
+                    this.btnAceptar.Text = "Guardar";
                     break;
-            }
+            }          
         }
 
         public override void MapearADatos()
         {
-            if (Modo == ApplicationForm.ModoForm.Alta)
+            switch (this.Modo)
             {
-                Persona per = new Persona();
-                PersonaActual = per;
-
+                case ModoForm.Baja:
+                    PersonaActual.State = Persona.States.Deleted;
+                    break;
+                case ModoForm.Consulta:
+                    PersonaActual.State = Persona.States.Unmodified;
+                    break;
+                case ModoForm.Alta:
+                    PersonaActual = new Persona();
+                    PersonaActual.State = Persona.States.New;
+                    break;
+                case ModoForm.Modificacion:
+                    PersonaActual.State = Persona.States.Modified;
+                    break;
+            }
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+            {
+                if (Modo == ModoForm.Modificacion)
+                    PersonaActual.ID = Convert.ToInt32(this.txtID.Text);
                 this.PersonaActual.Nombre = this.txtNombre.Text;
                 this.PersonaActual.Apellido = this.txtApellido.Text;
                 this.PersonaActual.Legajo = Convert.ToInt32(mtbLegajo.Text);
-                this.PersonaActual.Plan.ID = ((Plan)cbIDPlan.SelectedValue).ID;
+                this.PersonaActual.Plan.ID = Convert.ToInt32(this.cbIDPlan.SelectedValue);
                 this.PersonaActual.Direccion = this.txtDireccion.Text;
                 this.PersonaActual.Telefono = this.mtbTelefono.Text;
                 this.PersonaActual.Email = this.txtEmail.Text;
-                this.PersonaActual.TipoPersona = int.Parse(this.cbTipoPersona.Text);
+                this.PersonaActual.TipoPersona = Convert.ToInt32(this.cbTipoPersona.SelectedValue);
                 this.PersonaActual.FechaNacimiento = Convert.ToDateTime(this.mtbFechaNacimiento.Text);
-            }
-
-            else if (Modo == ApplicationForm.ModoForm.Modificacion)
-            {
-                this.PersonaActual.ID = Convert.ToInt32(this.txtID.Text);
-                this.PersonaActual.Direccion = this.txtDireccion.Text;
-                this.PersonaActual.Nombre = this.txtNombre.Text;
-                this.PersonaActual.Apellido = this.txtApellido.Text;
-                this.PersonaActual.Legajo = Convert.ToInt32(mtbLegajo.Text);
-                this.PersonaActual.Plan.ID = ((Plan)cbIDPlan.SelectedValue).ID;
-                this.PersonaActual.Telefono = this.mtbTelefono.Text;
-                this.PersonaActual.Email = this.txtEmail.Text;
-                this.PersonaActual.TipoPersona = int.Parse(this.cbTipoPersona.Text);
-                this.PersonaActual.FechaNacimiento = Convert.ToDateTime(this.mtbFechaNacimiento.Text);
-            }
+            }           
         }
 
         public override void GuardarCambios()
@@ -157,7 +140,31 @@ namespace UI.Desktop
                 this.Notificar("No se completaron todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-            //faltaria los combo
+            if ((string.IsNullOrEmpty(this.cbIDPlan.Text)))
+            {
+                this.Notificar("No se completaron todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if ((string.IsNullOrEmpty(this.cbTipoPersona.Text)))
+            {
+                this.Notificar("No se completaron todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if ((string.IsNullOrEmpty(this.mtbFechaNacimiento.Text)))
+            {
+                this.Notificar("No se completaron todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if ((string.IsNullOrEmpty(this.mtbTelefono.Text)))
+            {
+                this.Notificar("No se completaron todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if ((string.IsNullOrEmpty(this.mtbLegajo.Text)))
+            {
+                this.Notificar("No se completaron todos los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
             return true;
         }
 
@@ -198,9 +205,9 @@ namespace UI.Desktop
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-            if (Validar() == true)
+            if (this.Validar() == true)
             {
-                GuardarCambios();
+                this.GuardarCambios();
                 this.Close();
             }
         }

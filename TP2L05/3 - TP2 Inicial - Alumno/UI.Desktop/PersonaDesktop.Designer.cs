@@ -166,15 +166,13 @@
             // 
             // cbIDPlan
             // 
-            this.cbIDPlan.DisplayMember = "desc_plan";
             this.cbIDPlan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIDPlan.FormattingEnabled = true;
             this.cbIDPlan.Location = new System.Drawing.Point(142, 35);
             this.cbIDPlan.Name = "cbIDPlan";
             this.cbIDPlan.Size = new System.Drawing.Size(121, 21);
             this.cbIDPlan.TabIndex = 40;
-            this.cbIDPlan.Tag = "IDPlan";
-            this.cbIDPlan.ValueMember = "id_plan";
+            this.cbIDPlan.Tag = "";
             // 
             // label9
             // 
@@ -187,14 +185,12 @@
             // 
             // cbTipoPersona
             // 
-            this.cbTipoPersona.DisplayMember = "_descripcion";
             this.cbTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoPersona.FormattingEnabled = true;
             this.cbTipoPersona.Location = new System.Drawing.Point(410, 125);
             this.cbTipoPersona.Name = "cbTipoPersona";
             this.cbTipoPersona.Size = new System.Drawing.Size(121, 21);
             this.cbTipoPersona.TabIndex = 41;
-            this.cbTipoPersona.ValueMember = "_ID";
             // 
             // label10
             // 

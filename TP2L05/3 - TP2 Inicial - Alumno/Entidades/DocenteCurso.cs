@@ -8,7 +8,6 @@ namespace Entidades
 {
     public class DocenteCurso: Entidad
     {
-        private int _Cargo;
         private Curso _Curso;
         private Persona _Docente;
 
@@ -53,12 +52,6 @@ namespace Entidades
         public string ApellidoPersona
         {
             get {return _Docente.Apellido;}
-        }
-
-        public int Cargo
-        {
-            get { return _Cargo; }
-            set { _Cargo = value; }
         }
     }
 }
