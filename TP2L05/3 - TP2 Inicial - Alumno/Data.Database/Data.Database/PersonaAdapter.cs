@@ -4,6 +4,7 @@ using System.Text;
 using Entidades;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace Data.Database
 {
@@ -147,8 +148,8 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-
-                SqlCommand cmdSave = new SqlCommand(" UPDATE personas SET nombre=@nombre, apellido=@apellido, direccion=@direccion " +
+                
+                SqlCommand cmdSave = new SqlCommand("UPDATE personas SET nombre=@nombre, apellido=@apellido, direccion=@direccion," +
                     "email=@email, telefono=@telefono, fecha_nac=@fecha_nac, legajo=@legajo, tipo_persona=@tipo_persona, id_plan=@id_plan " +
                     " WHERE id_persona=@id ", sqlConn);
 
