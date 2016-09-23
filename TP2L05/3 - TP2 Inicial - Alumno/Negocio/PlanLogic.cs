@@ -12,48 +12,44 @@ namespace Negocio
     {
         private PlanAdapter _PlanData;
         public PlanAdapter PlanData
-    {
-        get { return _PlanData; }
-        set { _PlanData = value; }
-    }
+        {
+            get { return _PlanData; }
+            set { _PlanData = value; }
+        }
 
         public PlanLogic()
         {
             PlanData = new PlanAdapter();
         }
 
-    public Plan GetOne(int ID)
-    {
-        return PlanData.GetOne(ID);
-    }
-
-    public List<Plan> GetAll()
-    {
-        try
+        public Plan GetOne(int ID)
         {
-            return PlanData.GetAll();
+            return PlanData.GetOne(ID);
         }
 
-        catch (Exception Ex)
+        public List<Plan> GetAll()
         {
-            Exception ExcepcionManejada = new Exception("Error al recuperar listas de planes", Ex);
-            throw ExcepcionManejada;
-        }
-    }
+            try
+            {
+                return PlanData.GetAll();
+            }
 
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar listas de planes", Ex);
+                throw ExcepcionManejada;
+            }
+        }
     
-    public void Save(Plan plan)
+        public void Save(Plan plan)
     {
         PlanData.Save(plan);
     }
 
-    public void Delete(int ID)
+        public void Delete(int ID)
     {
         PlanData.Delete(ID);
     } 
-
-
-
 
     }
 }

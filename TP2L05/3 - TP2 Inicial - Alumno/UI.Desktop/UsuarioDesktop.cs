@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.RegularExpressions;
 using Entidades;
 using Negocio;
 
@@ -20,19 +19,17 @@ namespace UI.Desktop
         {
             InitializeComponent();
 
-            this.cbTipoPersona.Items.Add("Docente");
-            this.cbTipoPersona.Items.Add("Administrativo");
-            this.cbTipoPersona.Items.Add("Alumno");
+            //this.cbTipoPersona.Items.Add("Docente");
+            //this.cbTipoPersona.Items.Add("Administrativo");
+            //this.cbTipoPersona.Items.Add("Alumno");
         }
 
-        public UsuarioDesktop(ModoForm modo)
-            : this()
+        public UsuarioDesktop(ModoForm modo): this()
         {
             Modo = modo;
         }
 
-        public UsuarioDesktop(int ID, ModoForm modo)
-            : this()
+        public UsuarioDesktop(int ID, ModoForm modo): this()
         {
             Modo = modo;
             UsuarioLogic ul = new UsuarioLogic();
@@ -47,35 +44,78 @@ namespace UI.Desktop
             set { _usuarioActual = value; }
         }
 
-        public virtual void MapearDeDatos()
+        public override void MapearDeDatos()
         {
             this.txtID.Text = this.UsuarioActual.ID.ToString();
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
+            this.mskIDPersona.Text = this.UsuarioActual.IDPersona.ToString();
 
-            if (Modo == ModoForm.Alta ^ Modo == ModoForm.Modificacion)
+            switch (this.Modo)
             {
-                this.btnAceptar.Text = "Guardar";
-            }
-            else
-            {
-                if (Modo == ModoForm.Baja)
-                {
+                case ModoForm.Baja:
                     this.btnAceptar.Text = "Eliminar";
+                    break;
+                case ModoForm.Consulta:
+                    this.btnAceptar.Text = "Aceptar";
+                    break;
+                default:
+                    this.btnAceptar.Text = "Guardar";
+                    break;
+
+                /*this.txtID.Text = this.UsuarioActual.ID.ToString();
+                this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
+                this.txtClave.Text = this.UsuarioActual.Clave;
+                this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
+
+                if (Modo == ModoForm.Alta ^ Modo == ModoForm.Modificacion)
+                {
+                    this.btnAceptar.Text = "Guardar";
                 }
                 else
                 {
-                    this.btnAceptar.Text = "Aceptar";
-                }
+                    if (Modo == ModoForm.Baja)
+                    {
+                        this.btnAceptar.Text = "Eliminar";
+                    }
+                    else
+                    {
+                        this.btnAceptar.Text = "Aceptar";
+                    }
+                }*/
+            }
+        }
+
+       public override void MapearADatos()
+        {
+            switch (this.Modo)
+            {
+                case ModoForm.Baja:
+                    UsuarioActual.State = Usuario.States.Deleted;
+                    break;
+                case ModoForm.Consulta:
+                    UsuarioActual.State = Usuario.States.Unmodified;
+                    break;
+                case ModoForm.Alta:
+                    UsuarioActual = new Usuario();
+                    UsuarioActual.State = Usuario.States.New;
+                    break;
+                case ModoForm.Modificacion:
+                    UsuarioActual.State = Usuario.States.Modified;
+                    break;
+            }
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+            {
+                if (Modo == ModoForm.Modificacion)
+                    UsuarioActual.ID = Convert.ToInt32(this.txtID.Text);
+                UsuarioActual.Habilitado = this.chkHabilitado.Checked;
+                UsuarioActual.NombreUsuario = this.txtUsuario.Text;
+                UsuarioActual.Clave = this.txtClave.Text;
+                UsuarioActual.IDPersona = int.Parse(this.mskIDPersona.Text);
             }
 
-
-        }
-        public virtual void MapearADatos()
-        {
-
-            if (Modo == ModoForm.Alta)
+            /*if (Modo == ModoForm.Alta)
             {
                 Usuario u = new Usuario();
                 this.UsuarioActual = u;
@@ -98,16 +138,16 @@ namespace UI.Desktop
                     this.UsuarioActual.Clave = this.txtClave.Text;
                     this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                 }
-            }
+            }*/
         }
 
-        public virtual void GuardarCambios()
+        public override void GuardarCambios()
         {
             this.MapearADatos();
             UsuarioLogic usu = new UsuarioLogic();
             usu.Save(UsuarioActual);
         }
-        public virtual bool Validar()
+        public override bool Validar()
         {
             if ((string.IsNullOrEmpty(this.txtUsuario.Text)))
             {
@@ -148,11 +188,6 @@ namespace UI.Desktop
         public void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
             this.Notificar(this.Text, mensaje, botones, icono);
-        }
-
-       private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

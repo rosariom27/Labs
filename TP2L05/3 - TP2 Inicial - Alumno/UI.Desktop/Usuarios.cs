@@ -76,7 +76,6 @@ namespace UI.Desktop
             UsuarioDesktop formUsuario = new UsuarioDesktop(id, ApplicationForm.ModoForm.Modificacion);
             formUsuario.ShowDialog();
             this.Listar();
-
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)

@@ -60,16 +60,65 @@ namespace Data.Database
                  }
              }
              #endregion   */
-
         public List<Usuario> GetAll()
         {
+            List<Usuario> usuarios = new List<Usuario>();
 
             try
             {
+                this.OpenConnection();
 
+                /*creo el obje sqlcommand que sera la sentencia SQl que vamos a ejecutar
+                  contra la BD. (los datos de la bd: usario, contraseña, etc estan en connection
+                  string.*/
+
+                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", sqlConn);
+
+                //instancio un obj datareader que va a ser el que recupere los datos de la BD
+
+                SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
+
+                /*read() lee una fila de las devueltas por el comando sql, carga los datos
+                  en drUsurios para pdoer accederlos, devuelve verdadero meintras haya podido
+                  leer datos y avanza a la fila siguiente para el proximo read.*/
+
+                while (drUsuarios.Read())
+                {
+                    /*creo un obj usuario de la capa de entidades para copiar los datos 
+                      de la fila del datareader al objeto de entidades.*/
+
+                    Usuario usr = new Usuario();
+
+                    //copio los datos de la fila al obj
+
+                    usr.ID = (int)drUsuarios["id_usuario"];
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
+                    usr.Clave = (string)drUsuarios["clave"];
+                    usr.Habilitado = (bool)drUsuarios["habilitado"];
+                    usr.IDPersona = (int)drUsuarios["id_persona"];
+
+                    //agrego el objeto con datos a la lista que devuelvo                   
+                    usuarios.Add(usr);
+                }
+                //cerramos el datareader y la conexion a la BD
+                drUsuarios.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                Console.WriteLine(Ex.Message);
+            }
+
+            finally
+            {
+                this.CloseConnection();
+            }
+            return usuarios;
+            /*try
+            {
                 this.OpenConnection();
                 List<Usuario> usuarios = new List<Usuario>();
-                SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", sqlConn);
+                SqlCommand cmdUsuarios = new SqlCommand(" SELECT * FROM usuarios ", sqlConn);
 
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
 
@@ -80,23 +129,19 @@ namespace Data.Database
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
-                    usr.Nombre = (string)drUsuarios["nombre"];
-                    usr.Apellido = (string)drUsuarios["apellido"];
-                    usr.Email = (string)drUsuarios["email"];
+                    usr.IDPersona = (int)drUsuarios["id_persona"];
 
                     usuarios.Add(usr);
-
                 }
                 return usuarios;
                 drUsuarios.Close();
                 this.CloseConnection();
             }
-
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar listas de usuarios", Ex);
                 throw ExcepcionManejada;
-            }
+            }*/
 
         }
 
@@ -119,10 +164,7 @@ namespace Data.Database
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
-                    usr.Nombre = (string)drUsuarios["nombre"];
-                    usr.Apellido = (string)drUsuarios["apellido"];
-                    usr.Email = (string)drUsuarios["email"];
-
+                    usr.IDPersona = (int)drUsuarios["id_persona"];
                 }
 
                 drUsuarios.Close();
@@ -144,7 +186,6 @@ namespace Data.Database
             return usr;
 
         }
-
 
         public void Delete(int id)
         {
@@ -194,8 +235,8 @@ namespace Data.Database
                 this.OpenConnection();
 
                 SqlCommand cmdSave = new SqlCommand("UPDATE usuarios SET nombre_usuario=@nombre_usuario, clave=@clave," +
-                    "habilitado=@habilitado, nombre=@nombre, apellido=@apellido, email=@email " +
-                    "WHERE id_usuario=@id", sqlConn);
+                    "habilitado=@habilitado, id_persona=@id_persona " +
+                    " WHERE id_usuario=@id ", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 
@@ -203,10 +244,9 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Nombre;
-                cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Apellido;
-                cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Email;
-                
+                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona;
+               
+             
                 cmdSave.ExecuteNonQuery();
 
             }
@@ -228,15 +268,16 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                //debería también insertar nombre, apellido e email en BD
-                SqlCommand cmdSave = new SqlCommand("insert into usuarios (nombre_usuario, clave, habilitado) " +
-                "values(@nombre_usuario, @clave, @habilitado)" + "select @@identity", sqlConn);
+                
+                SqlCommand cmdSave = new SqlCommand("INSERT into usuarios (nombre_usuario, clave, habilitado, id_persona ) " +
+                "values(@nombre_usuario, @clave, @habilitado, @id_persona )" + "select @@identity", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
                             
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
+                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona;
                 
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
             }
@@ -272,7 +313,7 @@ namespace Data.Database
                     u.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     u.Clave = (string)drUsuarios["clave"];
                     u.Habilitado = (bool)drUsuarios["habilitado"];
-                    //u.IDPersona = (int)drUsuarios["id_persona"];
+                    u.IDPersona = (int)drUsuarios["id_persona"];
                 }
                 
                 drUsuarios.Close();
@@ -289,5 +330,6 @@ namespace Data.Database
             }
             return u;
         }
+
     }
 }

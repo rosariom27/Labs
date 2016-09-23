@@ -11,27 +11,25 @@ namespace Negocio
 {
     public class UsuarioLogic: NegocioLogic
     {
-
-
         private UsuarioAdapter _UsuarioData;
         public UsuarioAdapter UsuarioData
-    {
-        get { return _UsuarioData; }
-        set { _UsuarioData = value; }
-    }
+        {
+            get { return _UsuarioData; }
+            set { _UsuarioData = value; }
+        }
 
         public UsuarioLogic()
         {
             UsuarioData = new UsuarioAdapter();
         }
 
-    public Usuario GetOne(int ID)
+        public Usuario GetOne(int ID)
     {
         return UsuarioData.GetOne(ID);
     }
 
-    public List<Usuario> GetAll()
-    {
+        public List<Usuario> GetAll()
+        {
         try
         {
             return UsuarioData.GetAll();
@@ -43,19 +41,18 @@ namespace Negocio
             throw ExcepcionManejada;
         }
     }
-
     
-    public void Save(Usuario usuario)
+        public void Save(Usuario usuario)
     {
         UsuarioData.Save(usuario);
     }
 
-    public void Delete(int ID)
+        public void Delete(int ID)
     {
         UsuarioData.Delete(ID);
     }
 
-    public Usuario GetUsuarioForLogin(string us, string pass)
+        public Usuario GetUsuarioForLogin(string us, string pass)
     {
         return UsuarioData.GetUsuarioForLogin(us, pass);
     }

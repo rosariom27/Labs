@@ -9,13 +9,10 @@ namespace Data.Database
 {
     public class PlanAdapter: Adapter
     {
-
         public List<Plan> GetAll()
         {
-
             try
             {
-
                 this.OpenConnection();
                 List<Plan> planes = new List<Plan>();
                 SqlCommand cmdPlanes = new SqlCommand("select * from planes", sqlConn);

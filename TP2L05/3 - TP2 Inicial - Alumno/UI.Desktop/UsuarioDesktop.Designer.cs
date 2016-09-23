@@ -37,8 +37,6 @@
             this.chkHabilitado = new System.Windows.Forms.CheckBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtClave = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbTipoPersona = new System.Windows.Forms.ComboBox();
             this.personasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -60,19 +58,17 @@
             this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.lblID, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblClave, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtClave, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cbTipoPersona, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblConfirmarClave, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.mskIDPersona, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.btnBuscar, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lblUsuario, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblClave, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtClave, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblConfirmarClave, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.mskIDPersona, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnBuscar, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.chkHabilitado, 0, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -121,7 +117,7 @@
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(3, 141);
+            this.lblClave.Location = new System.Drawing.Point(3, 94);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(34, 13);
             this.lblClave.TabIndex = 3;
@@ -130,7 +126,7 @@
             // chkHabilitado
             // 
             this.chkHabilitado.AutoSize = true;
-            this.chkHabilitado.Location = new System.Drawing.Point(435, 3);
+            this.chkHabilitado.Location = new System.Drawing.Point(3, 251);
             this.chkHabilitado.Name = "chkHabilitado";
             this.chkHabilitado.Size = new System.Drawing.Size(73, 17);
             this.chkHabilitado.TabIndex = 7;
@@ -147,31 +143,10 @@
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(219, 144);
+            this.txtClave.Location = new System.Drawing.Point(219, 97);
             this.txtClave.Name = "txtClave";
             this.txtClave.Size = new System.Drawing.Size(154, 20);
             this.txtClave.TabIndex = 13;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Tipo Persona";
-            // 
-            // cbTipoPersona
-            // 
-            this.cbTipoPersona.DataSource = this.personasBindingSource;
-            this.cbTipoPersona.DisplayMember = "ID";
-            this.cbTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoPersona.FormattingEnabled = true;
-            this.cbTipoPersona.Location = new System.Drawing.Point(219, 50);
-            this.cbTipoPersona.Name = "cbTipoPersona";
-            this.cbTipoPersona.Size = new System.Drawing.Size(154, 21);
-            this.cbTipoPersona.TabIndex = 21;
-            this.cbTipoPersona.ValueMember = "TipoPersona";
             // 
             // personasBindingSource
             // 
@@ -180,7 +155,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(3, 94);
+            this.lblUsuario.Location = new System.Drawing.Point(3, 47);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 5;
@@ -188,7 +163,7 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(219, 97);
+            this.txtUsuario.Location = new System.Drawing.Point(219, 50);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(154, 20);
             this.txtUsuario.TabIndex = 15;
@@ -196,7 +171,7 @@
             // lblConfirmarClave
             // 
             this.lblConfirmarClave.AutoSize = true;
-            this.lblConfirmarClave.Location = new System.Drawing.Point(3, 188);
+            this.lblConfirmarClave.Location = new System.Drawing.Point(3, 141);
             this.lblConfirmarClave.Name = "lblConfirmarClave";
             this.lblConfirmarClave.Size = new System.Drawing.Size(81, 13);
             this.lblConfirmarClave.TabIndex = 6;
@@ -204,7 +179,7 @@
             // 
             // txtConfirmarClave
             // 
-            this.txtConfirmarClave.Location = new System.Drawing.Point(219, 191);
+            this.txtConfirmarClave.Location = new System.Drawing.Point(219, 144);
             this.txtConfirmarClave.Name = "txtConfirmarClave";
             this.txtConfirmarClave.Size = new System.Drawing.Size(154, 20);
             this.txtConfirmarClave.TabIndex = 16;
@@ -212,7 +187,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 248);
+            this.label2.Location = new System.Drawing.Point(3, 188);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 24;
@@ -220,7 +195,7 @@
             // 
             // mskIDPersona
             // 
-            this.mskIDPersona.Location = new System.Drawing.Point(219, 251);
+            this.mskIDPersona.Location = new System.Drawing.Point(219, 191);
             this.mskIDPersona.Mask = "99999";
             this.mskIDPersona.Name = "mskIDPersona";
             this.mskIDPersona.Size = new System.Drawing.Size(154, 20);
@@ -229,7 +204,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(435, 251);
+            this.btnBuscar.Location = new System.Drawing.Point(435, 191);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 26;
@@ -262,8 +237,6 @@
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtConfirmarClave;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbTipoPersona;
         private System.Windows.Forms.BindingSource personasBindingSource;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
