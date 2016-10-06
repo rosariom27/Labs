@@ -12,6 +12,13 @@ namespace Entidades
         private string _Clave;
         private bool _Habilitado;
         private int _IDPersona;
+        private Persona _Persona;
+
+        public Persona Persona
+        {
+            get { return _Persona; }
+            set { _Persona = value; }
+        }
         
         public string NombreUsuario
         {

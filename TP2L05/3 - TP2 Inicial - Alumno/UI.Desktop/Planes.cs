@@ -27,10 +27,10 @@ namespace UI.Desktop
         }
 
         private Usuario _usuarioActual;
-        public Usuario UsusarioActual
+      /*  public Usuario UsusarioActual
         {
-            get { return _usuarioActual; }
-        }
+            get { return _usuarioActual; }   //Para qué está?
+        }*/
 
         private Plan _planActual;  //creo que no lo estoy usando para nada
         public Plan PlanActual

@@ -94,7 +94,7 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 if (Modo == ModoForm.Modificacion)
-                    PlanActual.ID = Convert.ToInt32(this.txtID.Text);
+                PlanActual.ID = Convert.ToInt32(this.txtID.Text);
                 PlanActual.Descripcion = this.txtDescripcion.Text;
                 PlanActual.Especialidad.ID = Convert.ToInt32(this.cbIDEspecialidad.SelectedValue);
             }

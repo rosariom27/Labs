@@ -82,27 +82,12 @@ namespace UI.Desktop
         {
             if (this.dgvUsuarios.SelectedRows.Count != 0)
             {
-                int ID = ((Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-                UsuarioDesktop UD = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
-                UD.Text = "Eliminar usuario";
-                UD.ShowDialog();
+                int ID = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+                UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
+                formUsuario.ShowDialog();
                 this.Listar();
             }
-            
-            
-            /*int id = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-            UsuarioDesktop formUsuario = new UsuarioDesktop(id, ApplicationForm.ModoForm.Baja);
-            formUsuario.ShowDialog();
-            this.Listar();*/
-            
-            /*
-            int id = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
-            this.Notificar("Advertencia", "¿Desea eliminar este usuario?", MessageBoxButtons.OK, MessageBoxIcon.Question);
-            //¿CÓMO ELIMINO
-            UsuarioLogic usu = new UsuarioLogic();
-            usu.Delete(id);
-            this.Listar();*/
-           
+             
         }
 
         public void Notificar(string titulo, string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)

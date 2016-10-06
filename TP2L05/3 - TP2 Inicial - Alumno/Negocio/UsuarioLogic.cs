@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Entidades;
 using Data.Database;
 
-
 namespace Negocio
 {
     public class UsuarioLogic: NegocioLogic

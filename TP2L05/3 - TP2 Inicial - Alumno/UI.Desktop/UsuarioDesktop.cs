@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
+//using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 using Negocio;
@@ -22,6 +22,10 @@ namespace UI.Desktop
             //this.cbTipoPersona.Items.Add("Docente");
             //this.cbTipoPersona.Items.Add("Administrativo");
             //this.cbTipoPersona.Items.Add("Alumno");
+            PersonasLogic PL = new PersonasLogic();
+            this.cbIDPersona.DataSource = PL.GetAll();
+            this.cbIDPersona.DisplayMember = "Descripcion";
+            this.cbIDPersona.ValueMember = "ID";
         }
 
         public UsuarioDesktop(ModoForm modo): this()
@@ -50,7 +54,7 @@ namespace UI.Desktop
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
-            this.mskIDPersona.Text = this.UsuarioActual.IDPersona.ToString();
+            this.cbIDPersona.SelectedValue = this.UsuarioActual.Persona.ID;
 
             switch (this.Modo)
             {
@@ -63,7 +67,7 @@ namespace UI.Desktop
                 default:
                     this.btnAceptar.Text = "Guardar";
                     break;
-
+            }
                 /*this.txtID.Text = this.UsuarioActual.ID.ToString();
                 this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
                 this.txtClave.Text = this.UsuarioActual.Clave;
@@ -84,7 +88,7 @@ namespace UI.Desktop
                         this.btnAceptar.Text = "Aceptar";
                     }
                 }*/
-            }
+            
         }
 
        public override void MapearADatos()
@@ -108,11 +112,11 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 if (Modo == ModoForm.Modificacion)
-                    UsuarioActual.ID = Convert.ToInt32(this.txtID.Text);
+                UsuarioActual.ID = Convert.ToInt32(this.txtID.Text);
                 UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                 UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                 UsuarioActual.Clave = this.txtClave.Text;
-                UsuarioActual.IDPersona = int.Parse(this.mskIDPersona.Text);
+                UsuarioActual.Persona.ID = Convert.ToInt32(this.cbIDPersona.SelectedValue);
             }
 
             /*if (Modo == ModoForm.Alta)
@@ -188,36 +192,6 @@ namespace UI.Desktop
         public void Notificar(string mensaje, MessageBoxButtons botones, MessageBoxIcon icono)
         {
             this.Notificar(this.Text, mensaje, botones, icono);
-        }
-
-        private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(this.mskIDPersona.Text);
-            PersonasLogic PL = new PersonasLogic();
-            Persona p;
-            p = PL.GetOne(id);
-            DialogResult DR;
-
-            if (p.ID == id)
-            {
-                DR = (MessageBox.Show("ID encontrado", "Busqueda Exitosa", MessageBoxButtons.OK, MessageBoxIcon.None));
-                this.txtUsuario.ReadOnly = false;
-                this.txtClave.ReadOnly = false;
-                this.txtConfirmarClave.ReadOnly = false;
-                this.chkHabilitado.Enabled = true;
-                this.btnAceptar.Enabled = true;
-                this.btnCancelar.Enabled = true;
-            }
-            else
-            {
-                DR = (MessageBox.Show("ID no existe, por favor vuelva a ingresarlo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error));
-                this.txtUsuario.ReadOnly = true;
-                this.txtClave.ReadOnly = true;
-                this.txtConfirmarClave.ReadOnly = true;
-                this.chkHabilitado.Enabled = false;
-                this.btnAceptar.Enabled = false;
-                this.btnCancelar.Enabled = false;
-            }
         }
 
         private void btnAceptar_Click_2(object sender, EventArgs e)
