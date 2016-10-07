@@ -168,7 +168,7 @@ namespace Data.Database
         {
             if (usuario.State == Entidad.States.New)
             {
-                this.Insert(usuario);
+                this.Insert(usuario);  //La Persona llega en null si creamos en Usuario la relacion a la entidad de persona
             }
             else if (usuario.State == Entidad.States.Deleted)
             {
@@ -187,7 +187,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdSave = new SqlCommand("UPDATE usuarios SET nombre=@nombre_usuario, clave=@clave," +
+                SqlCommand cmdSave = new SqlCommand("UPDATE usuarios SET nombre_usuario=@nombre_usuario, clave=@clave," +
                     "habilitado=@habilitado, id_persona=@id_persona " +
                     " WHERE id_usuario=@id ", sqlConn);
 
@@ -197,7 +197,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.Persona.ID;
+                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona;
                
              
                 cmdSave.ExecuteNonQuery();
@@ -222,17 +222,25 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 
-                SqlCommand cmdSave = new SqlCommand("INSERT into usuarios (nombre, clave, habilitado, id_persona ) " +
-                "values(@nombre, @clave, @habilitado, @id_persona )" + "select @@identity", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("insert into usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email, id_persona ) " +
+                "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, @id_persona )" + "select @@identity", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 
+                
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.Persona.ID;
-                
+                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona;
+
+                cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Persona.Apellido;
+                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Persona.Nombre;
+                cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Persona.Email;
+             
                 usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
+                
+                
+                
             }
 
             catch (Exception Ex)

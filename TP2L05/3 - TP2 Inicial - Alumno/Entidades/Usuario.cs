@@ -14,7 +14,7 @@ namespace Entidades
         private int _IDPersona;
         private Persona _Persona;
 
-        public Persona Persona
+      public Persona Persona
         {
             get { return _Persona; }
             set { _Persona = value; }

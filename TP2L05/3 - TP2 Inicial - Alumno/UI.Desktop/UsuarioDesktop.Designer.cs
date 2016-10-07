@@ -42,8 +42,8 @@
             this.txtConfirmarClave = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.chkHabilitado = new System.Windows.Forms.CheckBox();
-            this.personasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbIDPersona = new System.Windows.Forms.ComboBox();
+            this.personasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personasBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -187,10 +187,6 @@
             this.chkHabilitado.Text = "Habilitado";
             this.chkHabilitado.UseVisualStyleBackColor = true;
             // 
-            // personasBindingSource
-            // 
-            this.personasBindingSource.DataSource = typeof(Entidades.Persona);
-            // 
             // cbIDPersona
             // 
             this.cbIDPersona.FormattingEnabled = true;
@@ -199,12 +195,17 @@
             this.cbIDPersona.Size = new System.Drawing.Size(154, 21);
             this.cbIDPersona.TabIndex = 25;
             // 
+            // personasBindingSource
+            // 
+            this.personasBindingSource.DataSource = typeof(Entidades.Persona);
+            // 
             // UsuarioDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(513, 327);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UsuarioDesktop";
+            this.Text = "";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personasBindingSource)).EndInit();

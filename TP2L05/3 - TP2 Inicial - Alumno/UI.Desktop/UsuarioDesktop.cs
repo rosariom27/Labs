@@ -54,7 +54,7 @@ namespace UI.Desktop
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
-            this.cbIDPersona.SelectedValue = this.UsuarioActual.Persona.ID;
+            this.cbIDPersona.SelectedValue = this.UsuarioActual.IDPersona;
 
             switch (this.Modo)
             {
@@ -112,13 +112,13 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 if (Modo == ModoForm.Modificacion)
-                UsuarioActual.ID = Convert.ToInt32(this.txtID.Text);
-                UsuarioActual.Habilitado = this.chkHabilitado.Checked;
-                UsuarioActual.NombreUsuario = this.txtUsuario.Text;
-                UsuarioActual.Clave = this.txtClave.Text;
-                UsuarioActual.Persona.ID = Convert.ToInt32(this.cbIDPersona.SelectedValue);
-            }
-
+                UsuarioActual.ID = Convert.ToInt32(this.txtID.Text); 
+                this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
+                this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
+                this.UsuarioActual.Clave = this.txtClave.Text;
+                this.UsuarioActual.IDPersona = Convert.ToInt32(this.cbIDPersona.SelectedValue);
+                
+             }
             /*if (Modo == ModoForm.Alta)
             {
                 Usuario u = new Usuario();

@@ -30,7 +30,7 @@ namespace UI.Desktop
             get { return _usuarioActual; }
             set { _usuarioActual = value; }
         }
-
+  
         public void Listar()
         {
             try
