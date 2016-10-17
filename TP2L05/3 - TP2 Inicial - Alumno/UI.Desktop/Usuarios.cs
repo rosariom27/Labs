@@ -80,13 +80,17 @@ namespace UI.Desktop
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-            if (this.dgvUsuarios.SelectedRows.Count != 0)
+            /*if (this.dgvUsuarios.SelectedRows.Count != 0)
             {
                 int ID = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
                 UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
                 formUsuario.ShowDialog();
                 this.Listar();
-            }
+            }*/
+            int ID = ((Entidades.Usuario)this.dgvUsuarios.SelectedRows[0].DataBoundItem).ID;
+            UsuarioDesktop formUsuario = new UsuarioDesktop(ID, ApplicationForm.ModoForm.Baja);
+            formUsuario.ShowDialog();
+            this.Listar();
              
         }
 

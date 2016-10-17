@@ -43,5 +43,10 @@ namespace Entidades
             get { return _IDPersona; }
             set { _IDPersona = value; }
         }
+
+        public Usuario()
+        {
+        this.Persona = new Persona();
+        } 
     }
 }

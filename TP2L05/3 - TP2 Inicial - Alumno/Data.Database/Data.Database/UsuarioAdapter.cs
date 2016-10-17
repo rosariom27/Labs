@@ -67,8 +67,7 @@ namespace Data.Database
                 this.OpenConnection();
                 List<Usuario> usuarios = new List<Usuario>();
                 SqlCommand cmdUsuarios = new SqlCommand("select * from usuarios", sqlConn);
-              //  SqlCommand cmdPersonas = new SqlCommand("select * from personas", sqlConn);
-
+              
                 SqlDataReader drUsuarios = cmdUsuarios.ExecuteReader();
 
                 while (drUsuarios.Read())
@@ -76,10 +75,10 @@ namespace Data.Database
                   
                     Usuario usr = new Usuario();
                     usr.ID = (int)drUsuarios["id_usuario"];
-                    usr.NombreUsuario = (string)drUsuarios["nombre"]; // ["nombre_usuario"]
+                    usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
-                    usr.IDPersona = (int)drUsuarios["id_persona"];
+                    usr.Persona.ID = (int)drUsuarios["id_persona"];
 
                     
                  
@@ -117,7 +116,7 @@ namespace Data.Database
                     usr.NombreUsuario = (string)drUsuarios["nombre_usuario"];
                     usr.Clave = (string)drUsuarios["clave"];
                     usr.Habilitado = (bool)drUsuarios["habilitado"];
-                    usr.IDPersona = (int)drUsuarios["id_persona"];
+                    usr.Persona.ID = (int)drUsuarios["id_persona"];
                 }
 
                 drUsuarios.Close();
@@ -181,7 +180,7 @@ namespace Data.Database
             usuario.State = Entidad.States.Unmodified;
         }
 
-        public void Update(Usuario usuario) //ver seteo
+        public void Update(Usuario usuario)
         {
             try
             {
@@ -197,7 +196,7 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona;
+                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.Persona.ID;
                
              
                 cmdSave.ExecuteNonQuery();
@@ -222,8 +221,8 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 
-                SqlCommand cmdSave = new SqlCommand("insert into usuarios (nombre_usuario, clave, habilitado, nombre, apellido, email, id_persona ) " +
-                "values(@nombre_usuario, @clave, @habilitado, @nombre, @apellido, @email, @id_persona )" + "select @@identity", sqlConn);
+                SqlCommand cmdSave = new SqlCommand("insert into usuarios (nombre_usuario, clave, habilitado, id_persona ) " +
+                "values(@nombre_usuario, @clave, @habilitado, @id_persona )" + "select @@identity", sqlConn);
 
                 cmdSave.CommandType = CommandType.Text;
 
@@ -231,15 +230,9 @@ namespace Data.Database
                 cmdSave.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = usuario.NombreUsuario;
                 cmdSave.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = usuario.Clave;
                 cmdSave.Parameters.Add("@habilitado", SqlDbType.Bit).Value = usuario.Habilitado;
-                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.IDPersona;
-
-                cmdSave.Parameters.Add("@apellido", SqlDbType.VarChar, 50).Value = usuario.Persona.Apellido;
-                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = usuario.Persona.Nombre;
-                cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = usuario.Persona.Email;
+                cmdSave.Parameters.Add("@id_persona", SqlDbType.Int).Value = usuario.Persona.ID;
              
-                usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());
-                
-                
+                usuario.ID = Decimal.ToInt32((decimal)cmdSave.ExecuteScalar());             
                 
             }
 

@@ -54,7 +54,7 @@ namespace UI.Desktop
             this.chkHabilitado.Checked = this.UsuarioActual.Habilitado;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
-            this.cbIDPersona.SelectedValue = this.UsuarioActual.IDPersona;
+            this.cbIDPersona.SelectedValue = this.UsuarioActual.Persona.ID;
 
             switch (this.Modo)
             {
@@ -116,7 +116,7 @@ namespace UI.Desktop
                 this.UsuarioActual.Habilitado = this.chkHabilitado.Checked;
                 this.UsuarioActual.NombreUsuario = this.txtUsuario.Text;
                 this.UsuarioActual.Clave = this.txtClave.Text;
-                this.UsuarioActual.IDPersona = Convert.ToInt32(this.cbIDPersona.SelectedValue);
+                this.UsuarioActual.Persona.ID = Convert.ToInt32(this.cbIDPersona.SelectedValue);
                 
              }
             /*if (Modo == ModoForm.Alta)
