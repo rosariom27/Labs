@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Entidades;
 using Negocio;
+using Entidades;
 
 namespace UI.Web
 {
@@ -13,71 +13,87 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            if (!(Page.IsPostBack))
             {
                 this.LoadGrid();
             }
         }
 
-       UsuarioLogic _logic;
-       public UsuarioLogic Logic
-       {
-           get { if (_logic == null)
-           {
-               _logic = new UsuarioLogic();
-           }
-           return _logic;
-           }
-       }
+        UsuarioLogic _logic;
+        private UsuarioLogic Logic
+        {
+            get
+            {
+                if (_logic==null)
+                {
+                    _logic = new UsuarioLogic();
+                }
+                return _logic;
+            }
+        }
 
-       private void LoadGrid()
-       {
-           this.gridView.DataSource = this.Logic.GetAll();
-           this.gridView.DataBind();
-       }
+        private void LoadGrid()
+        {
+            this.gridView.DataSource = this.Logic.GetAll();
+            this.gridView.DataBind();
+        }
 
-       public enum FormModes
-       {
-           Alta,
-           Baja,
-           Modificacion
-       }
+        public enum FormModes
+        {
+            Alta,
+            Baja,
+            Modificacion
+        }
 
         public FormModes FormMode
-       {
-           get { return(FormModes) this.ViewState["FormMode"] ;}
-           set { this.ViewState["FormMode"] = value;}
-
-       }
+        {
+            get { return (FormModes)this.ViewState["FormMode"] ;}
+            set { this.ViewState["FormMode"] = value ;}
+        }
 
         private Usuario Entidad
         {
             get;
             set;
+
         }
 
         private int SelectedID
         {
-            get {
-
-                if (this.ViewState["SelectedID"] != null)
+            get
+            {
+                if(this.ViewState["SelectedID"] != null)
                 {
                     return (int)this.ViewState["SelectedID"];
-
                 }
                 else
                 {
                     return 0;
                 }
-                           
-                }
-            set { this.ViewState["SelectedID"] = value; }
-
+            }
+            set
+            {
+                this.ViewState["SelectedID"] = value;
+            }
         }
 
         private bool IsEntitySelected
         {
-            get { return (this.SelectedID != 0); }
+            get
+            {
+                return (this.SelectedID != 0);
+            }
+        }
+
+
+        protected void editarLinkButton_Click1(object sender, EventArgs e)
+        {
+            if(this.IsEntitySelected)
+            {
+                this.formPanel.Visible = true;
+                this.FormMode = FormModes.Modificacion;
+                this.LoadForm(this.SelectedID);
+            }
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,27 +106,16 @@ namespace UI.Web
             this.Entidad = this.Logic.GetOne(id);
             this.nombreUsuarioTextBox.Text = this.Entidad.NombreUsuario;
             this.habilitadoCheckBox.Checked = this.Entidad.Habilitado;
-
-        }
-
-        protected void editarLinkButton_Click(object sender, EventArgs e)
-        {
-            if(this.IsEntitySelected)
-            {
-                this.formPanel.Visible = true;
-                this.FormMode = FormModes.Modificacion;
-                this.LoadForm(this.SelectedID);
-            }
         }
 
         private void LoadEntidad(Usuario usuario)
         {
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
-
+            usuario.Clave = this.claveTextBox.Text;
         }
 
-        private void SaveEntidad(Usuario usuario)
+        private void SaveEntidad (Usuario usuario)
         {
             this.Logic.Save(usuario);
         }
@@ -126,6 +131,7 @@ namespace UI.Web
 
             this.formPanel.Visible = false;
         }
+
 
     }
 }

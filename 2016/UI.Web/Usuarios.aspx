@@ -1,17 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Usuarios" %>
+﻿<%@ Page Title="Usuarios" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Usuarios.aspx.cs" Inherits="UI.Web.Usuarios" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="bodyContentPlaceHolder1" runat="server">
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Usuarios</title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
-        <asp:Panel ID="gridPanel" runat="server">
-            <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false" 
+     <asp:Panel ID="gridPanel" runat="server">
+            <asp:gridView ID="gridView" runat="server" AutoGenerateColumns="false" 
               SelectedRowStyle-BackColor="Black"
               SelectedRowStyle-ForeColor="White"
               DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged"  >
@@ -23,7 +16,7 @@
                   <asp:BoundField HeaderText="Habilitado" DataField="Habilitado" />
                   <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
               </Columns>
-            </asp:GridView>
+            </asp:gridView>
         </asp:Panel>
         <asp:Panel ID="formPanel" Visible="false" runat="server" >
             <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
@@ -41,7 +34,7 @@
         </asp:Panel>
 
         <asp:Panel ID="gridActionsPanel" runat="server">
-            <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
+            <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click1">Editar</asp:LinkButton>
             <asp:LinkButton ID="eliminarLinkButton" runat="server">Eliminar</asp:LinkButton>
             <asp:LinkButton ID="nuevoLinkButton" runat="server">Nuevo</asp:LinkButton>
         </asp:Panel>
@@ -52,7 +45,5 @@
             <asp:LinkButton ID="cancelarLinkButton" runat="server">Cancelar</asp:LinkButton>
         </asp:Panel>
     
-    </div>
-    </form>
-</body>
-</html>
+
+</asp:Content>
