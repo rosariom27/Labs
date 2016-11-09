@@ -10,8 +10,8 @@
               DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged"  >
               <Columns>
                   <%--<asp:BoundField HeaderText="Nombre" DataField="Nombre" />
-                  <asp:BoundField HeaderText="Apellido" DataField="Apellido" />
-                  <asp:BoundField HeaderText="EMail" DataField="EMail" />--%>
+                  <asp:BoundField HeaderText="Apellido" DataField="Apellido" />--%>
+                  <asp:BoundField HeaderText="IDPersona" DataField="ID" />
                   <asp:BoundField HeaderText="Usuario" DataField="NombreUsuario" />
                   <asp:BoundField HeaderText="Habilitado" DataField="Habilitado" />
                   <asp:CommandField SelectText="Seleccionar" ShowSelectButton="True" />
@@ -21,6 +21,9 @@
         <asp:Panel ID="formPanel" Visible="false" runat="server" >
             <asp:Label ID="habilitadoLabel" runat="server" Text="Habilitado: "></asp:Label>
             <asp:CheckBox ID="habilitadoCheckBox" runat="server"></asp:CheckBox>
+            <br />
+            <asp:Label ID="IDPersonaLabel" runat="server" Text="ID Persona: "></asp:Label>
+            <asp:TextBox ID="IDPersonaTextBox" runat="server"></asp:TextBox>
             <br />
             <asp:Label ID="nombreUsuarioLabel" runat="server" Text="Usuario: "></asp:Label>
             <asp:TextBox ID="nombreUsuarioTextBox" runat="server"></asp:TextBox>
@@ -35,14 +38,14 @@
 
         <asp:Panel ID="gridActionsPanel" runat="server">
             <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click1">Editar</asp:LinkButton>
-            <asp:LinkButton ID="eliminarLinkButton" runat="server">Eliminar</asp:LinkButton>
-            <asp:LinkButton ID="nuevoLinkButton" runat="server">Nuevo</asp:LinkButton>
+            <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
+            <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
         </asp:Panel>
 
         <asp:Panel ID="formActionsPanel" runat="server">
 
             <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-            <asp:LinkButton ID="cancelarLinkButton" runat="server">Cancelar</asp:LinkButton>
+            <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
         </asp:Panel>
     
 

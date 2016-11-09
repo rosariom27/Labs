@@ -58,6 +58,24 @@ namespace UI.Web {
         protected global::System.Web.UI.WebControls.CheckBox habilitadoCheckBox;
         
         /// <summary>
+        /// IDPersonaLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label IDPersonaLabel;
+        
+        /// <summary>
+        /// IDPersonaTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox IDPersonaTextBox;
+        
+        /// <summary>
         /// nombreUsuarioLabel control.
         /// </summary>
         /// <remarks>

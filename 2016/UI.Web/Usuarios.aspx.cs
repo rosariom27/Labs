@@ -92,7 +92,8 @@ namespace UI.Web
             {
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
-                this.LoadForm(this.SelectedID);
+                this.LoadForm((int)gridView.SelectedValue);
+                //this.LoadForm(this.SelectedID);
             }
         }
 
@@ -104,12 +105,14 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entidad = this.Logic.GetOne(id);
+            this.IDPersonaTextBox.Text = this.Entidad.Persona.ID.ToString();
             this.nombreUsuarioTextBox.Text = this.Entidad.NombreUsuario;
             this.habilitadoCheckBox.Checked = this.Entidad.Habilitado;
         }
 
         private void LoadEntidad(Usuario usuario)
         {
+            usuario.Persona.ID = Convert.ToInt32(this.IDPersonaTextBox.Text);
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
             usuario.Clave = this.claveTextBox.Text;
@@ -122,16 +125,82 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            this.Entidad = new Usuario();
-            this.Entidad.ID = this.SelectedID;
-            this.Entidad.State = Entidades.Entidad.States.Modified;
-            this.LoadEntidad(this.Entidad);
-            this.SaveEntidad(this.Entidad);
-            this.LoadGrid();
+            switch (this.FormMode)
+            {
+                case FormModes.Alta:
+                    this.Entidad = new Usuario();
+                    this.LoadEntidad(this.Entidad);
+                    this.SaveEntidad(this.Entidad);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Baja:
+                    this.DeleteEntidad(this.SelectedID);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Modificacion:
+                    this.Entidad = new Usuario();
+                    this.Entidad.ID = (int)gridView.SelectedValue;
+                    //this.Entidad.ID = this.SelectedID;
+                    this.Entidad.State = Entidades.Entidad.States.Modified;
+                    this.LoadEntidad(this.Entidad);
+                    this.SaveEntidad(this.Entidad);
+                    this.LoadGrid();
+                    break;
+                default:
+                    break;
+            }
 
             this.formPanel.Visible = false;
         }
 
+        private void EnableForm(bool enable)
+        {
+            this.IDPersonaTextBox.Enabled = enable;
+            this.nombreUsuarioTextBox.Enabled = enable;
+            this.claveTextBox.Visible = enable;
+            //this.claveLabel.Visible = enable;
+            this.repetirClaveTextBox.Visible = enable;
+            //this.repetirClaveLabel.Visible = enable;
+        }
+
+        protected void eliminarLinkButton_Click(object sender, EventArgs e)
+        {
+            if (this.IsEntitySelected)
+            {
+                this.formPanel.Visible = true;
+                this.FormMode = FormModes.Baja;
+                this.EnableForm(false);
+                this.LoadForm(this.SelectedID);
+            }
+        }
+
+        private void DeleteEntidad(int id)
+        {
+            this.Logic.Delete(id);
+        }
+
+        protected void nuevoLinkButton_Click(object sender, EventArgs e)
+        {
+            this.formPanel.Visible = true;
+            this.FormMode = FormModes.Alta;
+            this.EnableForm(true);
+            this.ClearForm();
+        }
+
+        private void ClearForm()
+        {
+            this.IDPersonaTextBox.Text = string.Empty;
+            this.nombreUsuarioTextBox.Text = string.Empty;
+            this.habilitadoCheckBox.Checked = false;
+            this.claveTextBox.Text = string.Empty;
+            this.repetirClaveLabel.Text = string.Empty;
+
+        }
+
+        protected void cancelarLinkButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
+        }
 
     }
 }
