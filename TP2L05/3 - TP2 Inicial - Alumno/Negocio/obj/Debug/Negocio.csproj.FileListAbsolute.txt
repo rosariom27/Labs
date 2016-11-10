@@ -1,0 +1,9 @@
+C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Negocio\bin\Debug\Negocio.dll
+C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Negocio\bin\Debug\Data.Database.dll
+C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Negocio\bin\Debug\Entidades.dll
+C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Negocio\obj\Debug\Negocio.dll
+C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Negocio\bin\Debug\Data.Database.pdb

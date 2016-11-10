@@ -9,7 +9,7 @@ using Entidades;
 
 namespace UI.Web
 {
-    public partial class Usuarios : System.Web.UI.Page
+    public partial class Usuarios : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -38,18 +38,7 @@ namespace UI.Web
             this.gridView.DataBind();
         }
 
-        public enum FormModes
-        {
-            Alta,
-            Baja,
-            Modificacion
-        }
-
-        public FormModes FormMode
-        {
-            get { return (FormModes)this.ViewState["FormMode"] ;}
-            set { this.ViewState["FormMode"] = value ;}
-        }
+       
 
         private Usuario Entidad
         {
