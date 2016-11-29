@@ -5,3 +5,10 @@ C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Datab
 C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Database\Data.Database\bin\Debug\Entidades.pdb
 C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Database\Data.Database\obj\Debug\Data.Database.dll
 C:\Users\Aldana\Documents\GitHub\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Database\Data.Database\obj\Debug\Data.Database.pdb
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Database\Data.Database\bin\Debug\Data.Database.dll
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Database\Data.Database\bin\Debug\Data.Database.pdb
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Database\Data.Database\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Database\Data.Database\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Database\Data.Database\obj\Debug\Data.Database.csprojResolveAssemblyReference.cache
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Database\Data.Database\obj\Debug\Data.Database.dll
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Data.Database\Data.Database\obj\Debug\Data.Database.pdb

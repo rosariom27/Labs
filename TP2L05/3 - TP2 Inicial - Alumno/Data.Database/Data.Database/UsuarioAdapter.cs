@@ -256,7 +256,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
 
-                SqlCommand cmdUsuario = new SqlCommand("select * from usuarios WHERE clave=@clave and nombre_usuario=@nombre ", sqlConn);
+                SqlCommand cmdUsuario = new SqlCommand("select * from usuarios WHERE clave=@clave and nombre_usuario=@nombre_usuario ", sqlConn);
                 cmdUsuario.Parameters.Add("@clave", SqlDbType.VarChar, 50).Value = pass;
                 cmdUsuario.Parameters.Add("@nombre_usuario", SqlDbType.VarChar, 50).Value = us;
                 SqlDataReader drUsuarios = cmdUsuario.ExecuteReader();

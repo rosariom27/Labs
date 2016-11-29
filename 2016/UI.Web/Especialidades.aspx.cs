@@ -189,12 +189,7 @@ namespace UI.Web
                 case FormModes.Alta:
                     this.Entity = new Especialidad();
                     this.LoadEntidad(this.Entity);
-                    if (!Logic.Existe(Entity.Descripcion))  // VER
-                    {
-                        this.SaveEntidad(Entity);
-                    }
-                    else
-                       
+                    this.SaveEntidad(Entity);
                     this.LoadGrid();
                     this.ClearSession();
                     break;

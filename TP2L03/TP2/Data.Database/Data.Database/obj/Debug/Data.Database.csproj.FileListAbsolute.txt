@@ -1,0 +1,9 @@
+C:\Net\Labs\TP2L03\TP2\Data.Database\Data.Database\obj\Debug\Data.Database.csprojResolveAssemblyReference.cache
+C:\Net\Labs\TP2L03\TP2\Data.Database\Data.Database\bin\Debug\Data.Database.dll
+C:\Net\Labs\TP2L03\TP2\Data.Database\Data.Database\bin\Debug\Data.Database.pdb
+C:\Net\Labs\TP2L03\TP2\Data.Database\Data.Database\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L03\TP2\Data.Database\Data.Database\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L03\TP2\Data.Database\Data.Database\obj\Debug\Data.Database.dll
+C:\Net\Labs\TP2L03\TP2\Data.Database\Data.Database\obj\Debug\Data.Database.pdb
+C:\Net\Labs\TP2L03\TP2\Data.Database\Data.Database\bin\Debug\Data.Database.dll.CodeAnalysisLog.xml
+C:\Net\Labs\TP2L03\TP2\Data.Database\Data.Database\bin\Debug\Data.Database.dll.lastcodeanalysissucceeded

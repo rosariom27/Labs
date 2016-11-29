@@ -1,0 +1,66 @@
+C:\Net\Labs\TP2L01\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Net\Labs\TP2L02\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\Negocio.dll
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\Data.Database.dll
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\Negocio.pdb
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.CodeAnalysisLog.xml
+C:\Net\Labs\TP2L03\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.lastcodeanalysissucceeded
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\bin\Debug\Negocio.dll
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\bin\Debug\Data.Database.dll
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\bin\Debug\Negocio.pdb
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\obj\Debug\UI.Desktop.Usuarios.resources
+C:\Net\Labs\TP2L04\TP2\UI.Desktop\obj\Debug\UI.Desktop.UsuarioDesktop.resources
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\obj\Debug\UI.Desktop.exe
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\obj\Debug\UI.Desktop.pdb
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\bin\Debug\Negocio.dll
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\bin\Debug\Data.Database.dll
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\bin\Debug\Negocio.pdb
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\bin\Debug\Data.Database.pdb
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\obj\Debug\UI.Desktop.UsuarioDesktop.resources
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\obj\Debug\UI.Desktop.Usuarios.resources
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Net\Labs\TP2L05\TP2\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\obj\Debug\UI.Desktop.exe
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\obj\Debug\UI.Desktop.pdb
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\bin\Debug\UI.Desktop.exe
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\bin\Debug\UI.Desktop.pdb
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\bin\Debug\Negocio.dll
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\bin\Debug\Data.Database.dll
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\bin\Debug\Negocio.pdb
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\bin\Debug\Data.Database.pdb
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\obj\Debug\UI.Desktop.UsuarioDesktop.resources
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\obj\Debug\UI.Desktop.Usuarios.resources
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Net\Labs\TP2L05\1 - TP2 Inicial\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache

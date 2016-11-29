@@ -1,0 +1,14 @@
+C:\Net\Labs\TP2L05\5 - TP2 Inicial - Materia\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\bin\Debug\UI.Desktop.exe.config
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.csprojResolveAssemblyReference.cache
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.AlumnoInscripcionDesktop.resources
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.AlumnosInscripciones.resources
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.Especialidades.resources
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.EspecialidadDesktop.resources
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.MateriaDesktop.resources
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.Materias.resources
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.Menu.resources
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.UsuarioDesktop.resources
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.Usuarios.resources
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.Properties.Resources.resources
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\UI.Desktop\obj\Debug\UI.Desktop.csproj.GenerateResource.Cache

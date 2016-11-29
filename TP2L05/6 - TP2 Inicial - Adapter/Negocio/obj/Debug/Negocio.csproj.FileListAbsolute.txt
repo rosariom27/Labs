@@ -1,0 +1,9 @@
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\Negocio\bin\Debug\Negocio.dll
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\Negocio\bin\Debug\Negocio.pdb
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\Negocio\bin\Debug\Data.Database.dll
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\Negocio\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\Negocio\bin\Debug\Data.Database.pdb
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\Negocio\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\Negocio\obj\Debug\Negocio.dll
+C:\Net\Labs\TP2L05\6 - TP2 Inicial - Adapter\Negocio\obj\Debug\Negocio.pdb

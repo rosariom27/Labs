@@ -281,7 +281,7 @@ namespace UI.Web
                     if (Page.IsValid)
                     {
                         this.Entidad = this.Logic.GetOne(this.SelectedID);
-                        this.Entidad.State = Entidad.States.Modified;  //hdslakgdesgljiszjg
+                        this.Entidad.State = Entidades.Entidad.States.Modified;  
                         this.LoadEntidad(this.Entidad);
                         this.SaveEntidad(this.Entidad);
                         this.LoadGrid();
@@ -291,12 +291,8 @@ namespace UI.Web
                 case FormModes.Alta:
                     this.Entidad = new Curso();
                     this.LoadEntidad(this.Entidad);
-                   this.SaveEntidad(Entidad);
-                   if (!Logic.Existe(Entidad.Materia.ID, Entidad.Comision.ID, Entidad.AnioCalendario))  //VER SI DEJAR VALIDACION
-                    {
-                        this.SaveEntidad(Entidad);
-                    }
-                    else
+                    this.SaveEntidad(Entidad);
+                    this.SaveEntidad(Entidad);
                     this.LoadGrid();
                     this.ClearSession();
                     break;

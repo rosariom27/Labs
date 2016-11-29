@@ -1,0 +1,5 @@
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Entidades\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Entidades\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Entidades\obj\Debug\Entidades.dll
+C:\Net\Labs\TP2L05\3 - TP2 Inicial - Alumno\Entidades\obj\Debug\Entidades.pdb

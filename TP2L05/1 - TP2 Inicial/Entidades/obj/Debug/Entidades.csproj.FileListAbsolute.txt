@@ -1,0 +1,15 @@
+C:\Net\Labs\TP2L03\TP2\Entidades\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L03\TP2\Entidades\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L03\TP2\Entidades\obj\Debug\Entidades.dll
+C:\Net\Labs\TP2L03\TP2\Entidades\obj\Debug\Entidades.pdb
+C:\Net\Labs\TP2L03\TP2\Entidades\bin\Debug\Entidades.dll.CodeAnalysisLog.xml
+C:\Net\Labs\TP2L03\TP2\Entidades\bin\Debug\Entidades.dll.lastcodeanalysissucceeded
+C:\Net\Labs\TP2L04\TP2\Entidades\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L04\TP2\Entidades\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L04\TP2\Entidades\obj\Debug\Entidades.dll
+C:\Net\Labs\TP2L04\TP2\Entidades\obj\Debug\Entidades.pdb
+C:\Net\Labs\TP2L05\TP2\Entidades\bin\Debug\Entidades.dll
+C:\Net\Labs\TP2L05\TP2\Entidades\bin\Debug\Entidades.pdb
+C:\Net\Labs\TP2L05\TP2\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
+C:\Net\Labs\TP2L05\TP2\Entidades\obj\Debug\Entidades.dll
+C:\Net\Labs\TP2L05\TP2\Entidades\obj\Debug\Entidades.pdb
